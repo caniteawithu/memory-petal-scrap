@@ -4,7 +4,6 @@ import { CalendarSection } from "@/components/wedding/CalendarSection";
 import { GallerySection } from "@/components/wedding/GallerySection";
 import { LocationSection } from "@/components/wedding/LocationSection";
 import { AccountSection } from "@/components/wedding/AccountSection";
-import { RsvpSection } from "@/components/wedding/RsvpSection";
 import { GuestbookSection } from "@/components/wedding/GuestbookSection";
 import { FooterSection } from "@/components/wedding/FooterSection";
 import { StarDivider } from "@/components/wedding/StarDivider";
@@ -35,8 +34,6 @@ function WeddingInvitation() {
         <LocationSection />
         <StarDivider />
         <AccountSection />
-        <StarDivider />
-        <RsvpSection />
         <StarDivider />
         <GuestbookSection />
         <StarDivider />
