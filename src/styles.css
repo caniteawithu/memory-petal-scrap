@@ -297,12 +297,12 @@
   animation: slide-up 0.3s ease-out;
 }
 
-@keyframes photo-float {
-  0%, 100% { transform: translateY(-3px); }
-  50% { transform: translateY(3px); }
+@keyframes scroll-bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(8px); }
 }
 
-.animate-photo-float {
-  animation: photo-float 4s ease-in-out infinite;
+.animate-scroll-bounce {
+  animation: scroll-bounce 1.4s ease-in-out infinite;
   will-change: transform;
 }
