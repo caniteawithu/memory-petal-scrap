@@ -92,13 +92,18 @@
   --sidebar-border: var(--border);
   --sidebar-ring: var(--ring);
 
-  /* Postit colors for guestbook */
-  --postit-1: oklch(0.92 0.12 95);   /* yellow */
-  --postit-2: oklch(0.88 0.12 145);  /* mint */
-  --postit-3: oklch(0.88 0.1 25);    /* peach */
-  --postit-4: oklch(0.88 0.08 320);  /* pink */
-  --postit-5: oklch(0.88 0.08 240);  /* blue */
-  --postit-6: oklch(0.92 0.06 60);   /* cream */
+  /* Postit colors — natural paper tones (ivory/yellow/green/pink/kraft/white) */
+  --postit-1: oklch(0.96 0.022 95);   /* ivory */
+  --postit-2: oklch(0.95 0.055 100);  /* soft yellow */
+  --postit-3: oklch(0.94 0.045 130);  /* light green */
+  --postit-4: oklch(0.94 0.028 25);   /* soft pink */
+  --postit-5: oklch(0.82 0.045 70);   /* kraft brown */
+  --postit-6: oklch(0.985 0.005 95);  /* off-white lined */
+
+  /* Masking tape tones */
+  --tape-1: oklch(0.92 0.07 95 / 0.75);   /* warm beige */
+  --tape-2: oklch(0.88 0.015 90 / 0.7);   /* translucent gray */
+  --tape-3: oklch(0.93 0.05 100 / 0.75);  /* pale yellow */
 
   /* Shadows & gradients */
   --shadow-paper: 0 1px 2px oklch(0 0 0 / 0.06), 0 8px 20px -8px oklch(0.36 0.03 50 / 0.18);
@@ -122,9 +127,15 @@
     background-color: var(--color-background);
     color: var(--color-foreground);
     font-family: var(--font-sans);
+    font-size: 16px;
+    line-height: 1.65;
     -webkit-font-smoothing: antialiased;
     scroll-behavior: smooth;
   }
+
+  p { line-height: 1.7; }
+  input, textarea, button, select { font-size: 0.95rem; }
+  input::placeholder, textarea::placeholder { font-size: 0.95rem; }
 
   body {
     /* Subtle paper grain */
@@ -200,12 +211,63 @@
 
   .section-title {
     font-family: var(--font-sans);
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     font-weight: 700;
     color: var(--primary);
     text-align: center;
     letter-spacing: 0.02em;
+    line-height: 1.5;
   }
+
+  /* Paper note card with masking tape (guestbook) */
+  .paper-note {
+    position: relative;
+    padding: 1rem 0.9rem 0.9rem;
+    border-radius: 2px;
+    background-image:
+      radial-gradient(oklch(0.36 0.03 50 / 0.04) 1px, transparent 1px),
+      radial-gradient(oklch(0.36 0.03 50 / 0.03) 1px, transparent 1px);
+    background-size: 14px 14px, 9px 9px;
+    background-position: 0 0, 4px 4px;
+    box-shadow:
+      0 1px 1px oklch(0 0 0 / 0.05),
+      0 6px 14px -8px oklch(0.36 0.03 50 / 0.25);
+    /* torn-ish soft edges via subtle inset */
+    filter: drop-shadow(0 0 0.5px oklch(0.36 0.03 50 / 0.2));
+  }
+
+  .paper-note::before {
+    /* masking tape strip */
+    content: "";
+    position: absolute;
+    top: -8px;
+    left: 50%;
+    width: 46px;
+    height: 16px;
+    background: var(--tape-1);
+    transform: translateX(-50%) rotate(-3deg);
+    box-shadow: 0 1px 2px oklch(0 0 0 / 0.08);
+    /* serrated tape edges */
+    -webkit-mask-image:
+      linear-gradient(to right, transparent 0, #000 4px, #000 calc(100% - 4px), transparent 100%);
+            mask-image:
+      linear-gradient(to right, transparent 0, #000 4px, #000 calc(100% - 4px), transparent 100%);
+    opacity: 0.85;
+  }
+
+  .paper-note.tape-left::before {
+    left: 14px;
+    transform: rotate(-18deg);
+    width: 38px;
+  }
+  .paper-note.tape-right::before {
+    left: auto;
+    right: 14px;
+    transform: rotate(16deg);
+    width: 38px;
+  }
+  .paper-note.tape-gray::before { background: var(--tape-2); }
+  .paper-note.tape-yellow::before { background: var(--tape-3); }
 
   .star-divider {
     display: flex;
