@@ -10,7 +10,7 @@ const groom: Person[] = [
 
 const bride: Person[] = [
   { role: "신부", name: "조현아", phone: "010-6402-4327" },
-  { role: "어머니", name: "", phone: "010-2911-4327" },
+  { role: "어머니", name: "이명화", phone: "010-2911-4327" },
 ];
 
 function PersonCard({ p }: { p: Person }) {

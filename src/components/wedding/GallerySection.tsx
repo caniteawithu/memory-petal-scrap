@@ -11,7 +11,6 @@ const tapeColors = [
 export function GallerySection() {
   return (
     <section className="px-6">
-      <h2 className="section-title mb-3">갤러리</h2>
       <div className="flex justify-center mb-6">
         <div className="w-[140px]" style={{ transform: "rotate(-2deg)" }}>
           <Placeholder filename="photo_title.png" aspect="aspect-[3/1]" />

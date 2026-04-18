@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Placeholder } from "./Placeholder";
 
 type Message = {
   author: string;
@@ -45,10 +46,11 @@ export function GuestbookSection() {
 
   return (
     <section className="px-6">
-      <h2 className="section-title mb-2">방명록</h2>
-      <p className="text-center text-2xl mb-5" style={{ fontFamily: "var(--font-serif)", letterSpacing: "0.1em", color: "var(--accent)" }}>
-        guest book
-      </p>
+      <div className="flex justify-center mb-5">
+        <div className="w-[180px]">
+          <Placeholder filename="guest_book.png" aspect="aspect-[3/1]" />
+        </div>
+      </div>
 
       <form onSubmit={submit} className="space-y-2 mb-5">
         <div className="grid grid-cols-3 gap-2">
