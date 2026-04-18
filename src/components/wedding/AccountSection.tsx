@@ -23,7 +23,7 @@ export function AccountSection() {
 
   return (
     <section className="px-6">
-      <h2 className="section-title mb-4">마음 전하실 곳</h2>
+      <h2 className="section-title mb-4">💌 마음 전하실 곳</h2>
 
       <p className="text-center text-xs text-foreground/75 leading-relaxed mb-6" style={{ fontFamily: "var(--font-serif)" }}>
         참석이 어려운 분들을 위해<br />

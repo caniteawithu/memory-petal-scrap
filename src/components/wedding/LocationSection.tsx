@@ -4,7 +4,7 @@ export function LocationSection() {
 
   return (
     <section className="px-6">
-      <h2 className="section-title mb-6">오시는 길</h2>
+      <h2 className="section-title mb-6">🚌 오시는 길</h2>
 
       {/* Map placeholder */}
       <div className="rounded-md overflow-hidden shadow-[var(--shadow-paper)] mb-4 border border-border/60">

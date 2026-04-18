@@ -3,8 +3,6 @@ import { Placeholder } from "./Placeholder";
 export function IntroSection() {
   return (
     <section className="px-6 pt-10 pb-2">
-      <h2 className="section-title mb-6">인트로</h2>
-
       {/* Envelope */}
       <div className="flex justify-center mb-6">
         <div style={{ transform: "rotate(-2deg)" }} className="w-[200px]">

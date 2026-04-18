@@ -4,21 +4,23 @@ import { ContactModal } from "./ContactModal";
 const WEDDING_DATE = new Date("2026-07-04T12:30:00+09:00");
 
 function useCountdown() {
-  const [now, setNow] = useState(() => new Date());
+  const [now, setNow] = useState<Date | null>(null);
   useEffect(() => {
+    setNow(new Date());
     const t = setInterval(() => setNow(new Date()), 1000);
     return () => clearInterval(t);
   }, []);
+  if (!now) return { days: 0, hours: 0, minutes: 0, seconds: 0, ready: false };
   const diff = Math.max(0, WEDDING_DATE.getTime() - now.getTime());
   const days = Math.floor(diff / 86400000);
   const hours = Math.floor((diff % 86400000) / 3600000);
   const minutes = Math.floor((diff % 3600000) / 60000);
   const seconds = Math.floor((diff % 60000) / 1000);
-  return { days, hours, minutes, seconds };
+  return { days, hours, minutes, seconds, ready: true };
 }
 
 export function CalendarSection() {
-  const { days, hours, minutes, seconds } = useCountdown();
+  const { days, hours, minutes, seconds, ready } = useCountdown();
   const [open, setOpen] = useState(false);
 
   // July 2026: starts on Wednesday (day index 3). 31 days.
@@ -33,8 +35,6 @@ export function CalendarSection() {
 
   return (
     <section className="px-6">
-      <h2 className="section-title mb-6">예식안내</h2>
-
       <div className="bg-card rounded-md p-5 shadow-[var(--shadow-paper)] mx-2" style={{ transform: "rotate(-0.5deg)" }}>
         <p className="text-center font-serif text-lg mb-3 text-primary" style={{ fontFamily: "var(--font-serif)" }}>
           7월
@@ -68,7 +68,7 @@ export function CalendarSection() {
         <span className="text-primary">구동환</span> <span className="text-accent">🖤</span>{" "}
         <span className="text-primary">조현아</span>의 결혼식이
         <br />
-        <strong className="text-accent">{days}일</strong> 남았습니다
+        <strong className="text-accent">{ready ? `${days}일` : "—"}</strong> 남았습니다
       </p>
 
       <div className="grid grid-cols-4 gap-2 mt-4 text-center">
@@ -79,7 +79,7 @@ export function CalendarSection() {
           { label: "SEC", value: seconds },
         ].map((b) => (
           <div key={b.label} className="bg-secondary rounded-md py-2 px-1">
-            <div className="text-base font-bold text-primary tabular-nums">{b.value}</div>
+            <div className="text-base font-bold text-primary tabular-nums">{ready ? b.value : "—"}</div>
             <div className="text-[10px] text-muted-foreground tracking-wider">{b.label}</div>
           </div>
         ))}
