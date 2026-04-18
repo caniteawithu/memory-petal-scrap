@@ -1,30 +1,30 @@
-import { Placeholder } from "./Placeholder";
+import intro1 from "@/assets/intro1.png";
+import intro2 from "@/assets/intro2.png";
 
 export function IntroSection() {
   return (
     <section className="px-6 pt-10 pb-2">
       {/* Envelope */}
       <div className="flex justify-center mb-6">
-        <div style={{ transform: "rotate(-2deg)" }} className="w-[200px]">
-          <Placeholder filename="intro1.png (envelope)" aspect="aspect-[5/4]" />
+        <div style={{ transform: "rotate(-2deg)" }} className="w-[220px]">
+          <img
+            src={intro1}
+            alt="Happy wedding day envelope"
+            className="w-full h-auto select-none pointer-events-none"
+            draggable={false}
+          />
         </div>
       </div>
 
       {/* Photo */}
       <div className="flex justify-center mb-8">
-        <div className="polaroid w-[220px]" style={{ transform: "rotate(1.5deg)" }}>
-          <span
-            className="tape"
-            style={{
-              top: "-10px",
-              left: "20px",
-              width: "50px",
-              height: "18px",
-              transform: "rotate(-8deg)",
-              background: "var(--tape)",
-            }}
+        <div className="w-[240px]" style={{ transform: "rotate(1.5deg)" }}>
+          <img
+            src={intro2}
+            alt="구동환 조현아 폴라로이드 사진"
+            className="w-full h-auto select-none pointer-events-none"
+            draggable={false}
           />
-          <Placeholder filename="intro2.png (photo)" aspect="aspect-square" />
         </div>
       </div>
 

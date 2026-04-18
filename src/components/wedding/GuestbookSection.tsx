@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Placeholder } from "./Placeholder";
+import guestTitle from "@/assets/guest.png";
 
 type Message = {
   author: string;
@@ -47,8 +47,13 @@ export function GuestbookSection() {
   return (
     <section className="px-6">
       <div className="flex justify-center mb-5">
-        <div className="w-[180px]">
-          <Placeholder filename="guest_book.png" aspect="aspect-[3/1]" />
+        <div className="w-[200px]">
+          <img
+            src={guestTitle}
+            alt="guest book"
+            className="w-full h-auto select-none pointer-events-none"
+            draggable={false}
+          />
         </div>
       </div>
 

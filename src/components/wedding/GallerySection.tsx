@@ -1,5 +1,5 @@
 import { Polaroid } from "./Polaroid";
-import { Placeholder } from "./Placeholder";
+import photoTitle from "@/assets/photo_title.png";
 
 const rotations = [-2, 1, -1, 2, -1.5, 1.5, -2, 1, -1];
 const tapeColors = [
@@ -12,8 +12,13 @@ export function GallerySection() {
   return (
     <section className="px-6">
       <div className="flex justify-center mb-6">
-        <div className="w-[140px]" style={{ transform: "rotate(-2deg)" }}>
-          <Placeholder filename="photo_title.png" aspect="aspect-[3/1]" />
+        <div className="w-[180px]" style={{ transform: "rotate(-2deg)" }}>
+          <img
+            src={photoTitle}
+            alt="photo"
+            className="w-full h-auto select-none pointer-events-none"
+            draggable={false}
+          />
         </div>
       </div>
 
