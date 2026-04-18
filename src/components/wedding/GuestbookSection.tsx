@@ -77,38 +77,45 @@ export function GuestbookSection() {
         </button>
       </form>
 
-      {messages.length === 0 ? (
-        <div className="grid grid-cols-2 gap-3">
-          {[0, 1, 2, 3].map((i) => (
-            <div
-              key={i}
-              className="aspect-square rounded-sm shadow-[var(--shadow-soft)]"
-              style={{
-                background: POSTIT_VARS[i],
-                transform: `rotate(${i % 2 === 0 ? -2 : 2}deg)`,
-              }}
-            />
-          ))}
-        </div>
-      ) : (
-        <div className="columns-2 gap-3 [column-fill:_balance]">
-          {messages.map((m, i) => (
-            <div
-              key={i}
-              className="break-inside-avoid mb-3 p-3 rounded-sm shadow-[var(--shadow-soft)]"
-              style={{
-                background: POSTIT_VARS[m.color_index],
-                transform: `rotate(${(i % 5) - 2}deg)`,
-              }}
-            >
-              <p className="text-xs text-foreground/85 leading-relaxed whitespace-pre-wrap" style={{ fontFamily: "var(--font-serif)" }}>
-                {m.content}
-              </p>
-              <p className="mt-2 text-[10px] text-foreground/60 text-right">— {m.author}</p>
+      {(() => {
+        const tapeVariants = ["", "tape-left", "tape-right", "tape-gray", "tape-yellow"];
+        const rotations = [-2, 1.5, -1, 2, -1.5, 1];
+        if (messages.length === 0) {
+          return (
+            <div className="grid grid-cols-2 gap-4 gap-y-6 pt-3">
+              {[0, 1, 2, 3].map((i) => (
+                <div
+                  key={i}
+                  className={`paper-note aspect-square ${tapeVariants[i % tapeVariants.length]}`}
+                  style={{
+                    backgroundColor: POSTIT_VARS[i],
+                    transform: `rotate(${rotations[i % rotations.length]}deg)`,
+                  }}
+                />
+              ))}
             </div>
-          ))}
-        </div>
-      )}
+          );
+        }
+        return (
+          <div className="columns-2 gap-4 [column-fill:_balance] pt-3">
+            {messages.map((m, i) => (
+              <div
+                key={i}
+                className={`paper-note break-inside-avoid mb-5 ${tapeVariants[i % tapeVariants.length]}`}
+                style={{
+                  backgroundColor: POSTIT_VARS[m.color_index],
+                  transform: `rotate(${rotations[i % rotations.length]}deg)`,
+                }}
+              >
+                <p className="text-sm text-foreground/85 leading-relaxed whitespace-pre-wrap">
+                  {m.content}
+                </p>
+                <p className="mt-2 text-[11px] text-foreground/60 text-right">— {m.author}</p>
+              </div>
+            ))}
+          </div>
+        );
+      })()}
     </section>
   );
 }
