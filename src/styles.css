@@ -296,3 +296,13 @@
 .animate-slide-up {
   animation: slide-up 0.3s ease-out;
 }
+
+@keyframes photo-float {
+  0%, 100% { transform: translateY(-3px); }
+  50% { transform: translateY(3px); }
+}
+
+.animate-photo-float {
+  animation: photo-float 4s ease-in-out infinite;
+  will-change: transform;
+}
