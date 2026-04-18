@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { IntroSection } from "@/components/wedding/IntroSection";
+import { IntroTextSection } from "@/components/wedding/IntroTextSection";
 import { CalendarSection } from "@/components/wedding/CalendarSection";
 import { GallerySection } from "@/components/wedding/GallerySection";
 import { LocationSection } from "@/components/wedding/LocationSection";
@@ -26,6 +27,7 @@ function WeddingInvitation() {
     <main className="min-h-screen bg-background">
       <article className="invitation-shell">
         <IntroSection />
+        <IntroTextSection />
         <StarDivider />
         <CalendarSection />
         <StarDivider />
