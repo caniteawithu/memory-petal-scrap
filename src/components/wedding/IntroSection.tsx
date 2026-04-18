@@ -1,30 +1,66 @@
+import { useEffect, useState } from "react";
 import intro1 from "@/assets/intro1.png";
 import intro2 from "@/assets/intro2.png";
 
 export function IntroSection() {
+  const [opened, setOpened] = useState(false);
+
+  useEffect(() => {
+    const t = setTimeout(() => setOpened(true), 350);
+    return () => clearTimeout(t);
+  }, []);
+
   return (
     <section className="px-6 pt-10 pb-2">
-      {/* Envelope */}
-      <div className="flex justify-center mb-6">
-        <div style={{ transform: "rotate(-2deg)" }} className="w-[220px]">
-          <img
-            src={intro1}
-            alt="Happy wedding day envelope"
-            className="w-full h-auto select-none pointer-events-none"
-            draggable={false}
-          />
-        </div>
-      </div>
-
-      {/* Photo */}
+      {/* Envelope → Photo reveal */}
       <div className="flex justify-center mb-8">
-        <div className="w-[240px]" style={{ transform: "rotate(1.5deg)" }}>
-          <img
-            src={intro2}
-            alt="구동환 조현아 폴라로이드 사진"
-            className="w-full h-auto select-none pointer-events-none"
-            draggable={false}
-          />
+        <div
+          className="relative w-[88%] max-w-[300px]"
+          style={{ aspectRatio: "1 / 1.05", perspective: "900px" }}
+        >
+          {/* Envelope (intro1) */}
+          <div
+            className="absolute inset-0 flex items-start justify-center"
+            style={{
+              transform: opened
+                ? "rotate(-2deg) translateY(-6px) rotateX(-22deg)"
+                : "rotate(-2deg) translateY(0) rotateX(0deg)",
+              transformOrigin: "top center",
+              opacity: opened ? 0.85 : 1,
+              transition: "transform 0.8s ease-out, opacity 0.8s ease-out",
+              zIndex: 1,
+            }}
+          >
+            <img
+              src={intro1}
+              alt="Happy wedding day envelope"
+              className="w-[78%] h-auto select-none pointer-events-none"
+              draggable={false}
+            />
+          </div>
+
+          {/* Photo (intro2) */}
+          <div
+            className="absolute inset-0 flex items-end justify-center"
+            style={{
+              transform: opened
+                ? "rotate(1.5deg) translateY(0) scale(1)"
+                : "rotate(1.5deg) translateY(20px) scale(0.95)",
+              opacity: opened ? 1 : 0,
+              transition:
+                "transform 0.7s ease-out 0.15s, opacity 0.7s ease-out 0.15s",
+              zIndex: 2,
+            }}
+          >
+            <div className={opened ? "animate-photo-float w-[88%]" : "w-[88%]"}>
+              <img
+                src={intro2}
+                alt="구동환 조현아 폴라로이드 사진"
+                className="w-full h-auto select-none pointer-events-none"
+                draggable={false}
+              />
+            </div>
+          </div>
         </div>
       </div>
 
