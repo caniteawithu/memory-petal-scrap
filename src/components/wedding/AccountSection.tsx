@@ -7,8 +7,10 @@ const accounts: Account[] = [
   { side: "신부", bank: "카카오뱅크", number: "3333-15-5072765", name: "조현아" },
 ];
 
+type TabKey = "groom" | "bride" | null;
+
 export function AccountSection() {
-  const [openIdx, setOpenIdx] = useState<number | null>(1);
+  const [activeTab, setActiveTab] = useState<TabKey>("bride");
   const [copiedIdx, setCopiedIdx] = useState<number | null>(null);
 
   const copy = async (text: string, idx: number) => {
@@ -20,6 +22,8 @@ export function AccountSection() {
       // ignore
     }
   };
+
+  const tabKeys: ("groom" | "bride")[] = ["groom", "bride"];
 
   return (
     <section className="px-6">
@@ -33,35 +37,40 @@ export function AccountSection() {
 
       <div className="grid grid-cols-2 gap-3">
         {accounts.map((a, i) => {
-          const isOpen = openIdx === i;
+          const key = tabKeys[i];
+          const isOpen = activeTab === key;
           return (
-            <div key={i} className="bg-card rounded-md shadow-[var(--shadow-soft)] border border-border/50 overflow-hidden">
+            <div key={i} className="bg-card rounded-md shadow-[var(--shadow-soft)] border border-border/50 overflow-hidden transition-all">
               <button
-                onClick={() => setOpenIdx(isOpen ? null : i)}
+                onClick={() => setActiveTab(isOpen ? null : key)}
                 className="w-full px-4 py-3 flex items-center justify-center gap-2 text-base"
               >
                 <span className="text-primary font-semibold">{a.side}</span>
                 <svg
                   width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"
-                  className={`transition ${isOpen ? "rotate-180" : ""} text-muted-foreground`}
+                  className={`transition-transform duration-200 ${isOpen ? "rotate-180" : ""} text-muted-foreground`}
                 >
                   <path d="M6 9l6 6 6-6" />
                 </svg>
               </button>
-              {isOpen && (
-                <div className="px-4 pb-4 pt-1 border-t border-border/50">
-                  <p className="text-sm font-medium text-foreground/80 mb-1">{a.bank} {a.name && `· ${a.name}`}</p>
-                  <div className="flex flex-col gap-2">
-                    <p className="text-sm text-foreground tabular-nums break-all">{a.number}</p>
-                    <button
-                      onClick={() => copy(a.number, i)}
-                      className="text-xs px-3 py-1.5 rounded bg-accent/15 text-accent hover:bg-accent/25"
-                    >
-                      {copiedIdx === i ? "복사됨" : "복사"}
-                    </button>
+              <div
+                className={`grid transition-all duration-300 ease-out ${isOpen ? "grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0"}`}
+              >
+                <div className="overflow-hidden">
+                  <div className="px-4 pb-4 pt-1 border-t border-border/50">
+                    <p className="text-sm font-medium text-foreground/80 mb-1">{a.bank} {a.name && `· ${a.name}`}</p>
+                    <div className="flex flex-col gap-2">
+                      <p className="text-sm text-foreground tabular-nums break-all">{a.number}</p>
+                      <button
+                        onClick={() => copy(a.number, i)}
+                        className="text-xs px-3 py-1.5 rounded bg-accent/15 text-accent hover:bg-accent/25"
+                      >
+                        {copiedIdx === i ? "복사됨" : "복사"}
+                      </button>
+                    </div>
                   </div>
                 </div>
-              )}
+              </div>
             </div>
           );
         })}
