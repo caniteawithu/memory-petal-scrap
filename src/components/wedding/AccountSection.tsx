@@ -1,17 +1,19 @@
 import { useState } from "react";
 
-type Account = { side: "신랑"; bank: string; number: string; name?: string } | { side: "신부"; bank: string; number: string; name?: string };
+type Account = { side: "신랑" | "신부"; bank: string; number: string; name?: string };
 
 const accounts: Account[] = [
   { side: "신랑", bank: "기업은행", number: "010-6507-3885", name: "구동환" },
   { side: "신부", bank: "카카오뱅크", number: "3333-15-5072765", name: "조현아" },
 ];
 
-type TabKey = "groom" | "bride" | null;
-
 export function AccountSection() {
-  const [activeTab, setActiveTab] = useState<TabKey>("bride");
+  const [openMap, setOpenMap] = useState<Record<number, boolean>>({});
   const [copiedIdx, setCopiedIdx] = useState<number | null>(null);
+
+  const toggle = (i: number) => {
+    setOpenMap((prev) => ({ ...prev, [i]: !prev[i] }));
+  };
 
   const copy = async (text: string, idx: number) => {
     try {
@@ -23,8 +25,6 @@ export function AccountSection() {
     }
   };
 
-  const tabKeys: ("groom" | "bride")[] = ["groom", "bride"];
-
   return (
     <section className="px-6">
       <h2 className="section-title mb-4">💌 마음 전하실 곳</h2>
@@ -35,14 +35,13 @@ export function AccountSection() {
         너그럽게 양해 부탁드립니다.
       </p>
 
-      <div className="grid grid-cols-2 gap-3">
+      <div className="flex flex-col gap-3">
         {accounts.map((a, i) => {
-          const key = tabKeys[i];
-          const isOpen = activeTab === key;
+          const isOpen = !!openMap[i];
           return (
             <div key={i} className="bg-card rounded-md shadow-[var(--shadow-soft)] border border-border/50 overflow-hidden transition-all">
               <button
-                onClick={() => setActiveTab(isOpen ? null : key)}
+                onClick={() => toggle(i)}
                 className="w-full px-4 py-3 flex items-center justify-center gap-2 text-base"
               >
                 <span className="text-primary font-semibold">{a.side}</span>
@@ -57,13 +56,13 @@ export function AccountSection() {
                 className={`grid transition-all duration-300 ease-out ${isOpen ? "grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0"}`}
               >
                 <div className="overflow-hidden">
-                  <div className="px-4 pb-4 pt-1 border-t border-border/50">
-                    <p className="text-sm font-medium text-foreground/80 mb-1">{a.bank} {a.name && `· ${a.name}`}</p>
-                    <div className="flex flex-col gap-2">
+                  <div className="px-4 pb-4 pt-2 border-t border-border/50">
+                    <p className="text-sm font-medium text-foreground/80 mb-2">{a.bank} {a.name && `· ${a.name}`}</p>
+                    <div className="flex items-center justify-between gap-3">
                       <p className="text-sm text-foreground tabular-nums break-all">{a.number}</p>
                       <button
                         onClick={() => copy(a.number, i)}
-                        className="text-xs px-3 py-1.5 rounded bg-accent/15 text-accent hover:bg-accent/25"
+                        className="shrink-0 text-xs px-3 py-1.5 rounded bg-accent/15 text-accent hover:bg-accent/25"
                       >
                         {copiedIdx === i ? "복사됨" : "복사"}
                       </button>
