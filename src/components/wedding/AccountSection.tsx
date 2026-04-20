@@ -8,7 +8,7 @@ const accounts: Account[] = [
 ];
 
 export function AccountSection() {
-  const [openIdx, setOpenIdx] = useState<number | null>(null);
+  const [openIdx, setOpenIdx] = useState<number | null>(1);
   const [copiedIdx, setCopiedIdx] = useState<number | null>(null);
 
   const copy = async (text: string, idx: number) => {
