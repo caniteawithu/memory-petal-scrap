@@ -78,7 +78,7 @@ export function GuestbookSection() {
           type="submit"
           className="w-full py-3 rounded-md bg-accent text-accent-foreground text-base font-medium hover:bg-accent/90 text-center"
         >
-          축하 메시지 남기기🐾
+          축하 메시지 남기기 🐾
         </button>
       </form>
 
