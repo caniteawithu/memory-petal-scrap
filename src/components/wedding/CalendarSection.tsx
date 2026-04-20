@@ -39,7 +39,7 @@ export function CalendarSection() {
         <p className="text-center font-serif text-lg mb-3 text-primary" style={{ fontFamily: "var(--font-serif)" }}>
           7월
         </p>
-        <div className="grid grid-cols-7 gap-1 text-center text-xs">
+        <div className="grid grid-cols-7 gap-1 text-center text-xs overflow-visible">
           {["일", "월", "화", "수", "목", "금", "토"].map((d, i) => (
             <div key={d} className={`py-1 font-medium ${i === 0 ? "text-destructive/80" : "text-muted-foreground"}`}>
               {d}
@@ -48,22 +48,30 @@ export function CalendarSection() {
           {cells.map((d, i) => {
             const isWeddingDay = d === 4;
             return (
-              <div key={i} className="aspect-square flex items-center justify-center">
+              <div key={i} className="relative aspect-square flex items-center justify-center" style={{ overflow: "visible" }}>
                 {d && (
                   isWeddingDay ? (
-                    <span className="relative w-9 h-9 flex items-center justify-center overflow-visible">
+                    <>
                       <svg
                         viewBox="0 0 24 24"
-                        className="absolute w-7 h-7 text-accent drop-shadow-sm"
+                        className="absolute text-accent drop-shadow-sm"
+                        style={{
+                          top: "50%",
+                          left: "50%",
+                          transform: "translate(-50%, -50%)",
+                          width: "30px",
+                          height: "30px",
+                          zIndex: 1,
+                        }}
                         fill="currentColor"
                         aria-hidden="true"
                       >
                         <path d="M12 21s-7.5-4.6-9.6-9.2C1 8.6 2.6 5 6 5c2 0 3.4 1 4 2.2C10.6 6 12 5 14 5c3.4 0 5 3.6 3.6 6.8C19.5 16.4 12 21 12 21z" />
                       </svg>
-                      <span className="relative text-[12px] font-bold text-primary-foreground leading-none -translate-y-[1px]">
+                      <span className="relative text-[12px] font-bold text-primary-foreground leading-none -translate-y-[1px]" style={{ zIndex: 2 }}>
                         {d}
                       </span>
-                    </span>
+                    </>
                   ) : (
                     <span className="w-7 h-7 flex items-center justify-center rounded-full text-[15px] text-foreground/80">
                       {d}
