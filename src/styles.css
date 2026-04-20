@@ -127,15 +127,15 @@
     background-color: var(--color-background);
     color: var(--color-foreground);
     font-family: var(--font-sans);
-    font-size: 16px;
-    line-height: 1.65;
+    font-size: 17px;
+    line-height: 1.8;
     -webkit-font-smoothing: antialiased;
     scroll-behavior: smooth;
   }
 
-  p { line-height: 1.7; }
-  input, textarea, button, select { font-size: 0.95rem; }
-  input::placeholder, textarea::placeholder { font-size: 0.95rem; }
+  p { line-height: 1.85; }
+  input, textarea, button, select { font-size: 1rem; }
+  input::placeholder, textarea::placeholder { font-size: 1rem; }
 
   body {
     /* Subtle paper grain */

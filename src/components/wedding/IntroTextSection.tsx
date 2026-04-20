@@ -6,24 +6,33 @@ export function IntroTextSection() {
     >
       {/* Names */}
       <h2 className="text-2xl font-bold text-primary tracking-wide">
-        구동환 <span className="text-accent">♡</span> 조현아
+        구동환 <span className="text-accent">♥</span> 조현아
       </h2>
 
       {/* Subtitle */}
-      <p className="text-lg text-foreground mt-3">결혼합니다</p>
+      <p className="text-xl text-foreground mt-3">결혼합니다</p>
 
-      {/* Date & Place */}
-      <p className="text-sm text-foreground/80 leading-relaxed mt-6">
-        <strong className="text-primary">2026년 7월 4일 오후 12시 30분</strong>
+      {/* Date & Place — emphasized */}
+      <p className="text-base text-primary font-semibold leading-relaxed mt-7">
+        2026년 7월 4일 오후 12시 30분
         <br />
         더블유웨딩시티 5층 스위트가든홀
       </p>
 
-      {/* Divider */}
-      <p className="text-xs text-muted-foreground my-7">— ˗ˋ ୨୧ ˊ˗ —</p>
+      {/* Divider — rounder star style */}
+      <div
+        className="flex items-center justify-center gap-3 my-8 text-accent"
+        aria-hidden="true"
+      >
+        <span className="h-px w-10 bg-accent/40" />
+        <span className="text-xl leading-none">✦</span>
+        <span className="text-2xl leading-none">✿</span>
+        <span className="text-xl leading-none">✦</span>
+        <span className="h-px w-10 bg-accent/40" />
+      </div>
 
       {/* Message */}
-      <p className="text-[15px] text-foreground/85 leading-loose whitespace-pre-line">
+      <p className="text-[17px] text-foreground/85 leading-[2] whitespace-pre-line">
         {`비가 오면 그치길 바라는 게 아니라
 빗속에서 춤추는 법을 배우는 게 인생이래요.
 

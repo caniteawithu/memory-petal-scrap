@@ -50,13 +50,25 @@ export function CalendarSection() {
             return (
               <div key={i} className="aspect-square flex items-center justify-center">
                 {d && (
-                  <span
-                    className={`w-7 h-7 flex items-center justify-center rounded-full text-sm ${
-                      isWeddingDay ? "bg-primary text-primary-foreground font-bold" : "text-foreground/80"
-                    }`}
-                  >
-                    {d}
-                  </span>
+                  isWeddingDay ? (
+                    <span className="relative w-8 h-8 flex items-center justify-center">
+                      <svg
+                        viewBox="0 0 24 24"
+                        className="absolute inset-0 w-full h-full text-accent drop-shadow-sm"
+                        fill="currentColor"
+                        aria-hidden="true"
+                      >
+                        <path d="M12 21s-7.5-4.6-9.6-9.2C1 8.6 2.6 5 6 5c2 0 3.4 1 4 2.2C10.6 6 12 5 14 5c3.4 0 5 3.6 3.6 6.8C19.5 16.4 12 21 12 21z" />
+                      </svg>
+                      <span className="relative text-[13px] font-bold text-primary-foreground">
+                        {d}
+                      </span>
+                    </span>
+                  ) : (
+                    <span className="w-7 h-7 flex items-center justify-center rounded-full text-[15px] text-foreground/80">
+                      {d}
+                    </span>
+                  )
                 )}
               </div>
             );
@@ -64,8 +76,8 @@ export function CalendarSection() {
         </div>
       </div>
 
-      <p className="text-center text-sm text-foreground/85 mt-6 leading-relaxed" style={{ fontFamily: "var(--font-serif)" }}>
-        <span className="text-primary">구동환</span> <span className="text-accent">🖤</span>{" "}
+      <p className="text-center text-base text-foreground/85 mt-6 leading-relaxed" style={{ fontFamily: "var(--font-serif)" }}>
+        <span className="text-primary">구동환</span> <span className="text-accent">♥</span>{" "}
         <span className="text-primary">조현아</span>의 결혼식이
         <br />
         <strong className="text-accent">{ready ? `${days}일` : "—"}</strong> 남았습니다
@@ -87,9 +99,10 @@ export function CalendarSection() {
 
       <button
         onClick={() => setOpen(true)}
-        className="mt-6 w-full py-3 rounded-md bg-primary text-primary-foreground text-sm font-medium hover:bg-primary/90 active:scale-[0.98] transition"
+        className="mt-6 w-full py-3 rounded-md bg-accent text-accent-foreground text-base font-medium hover:bg-accent/90 active:scale-[0.98] transition inline-flex items-center justify-center gap-2"
       >
-        연락하기
+        <span>☎️</span>
+        <span>연락하기</span>
       </button>
 
       <ContactModal open={open} onClose={() => setOpen(false)} />
