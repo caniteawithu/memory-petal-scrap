@@ -22,19 +22,36 @@ export function FooterSection() {
     <section className="px-6 pb-12">
       <h2 className="section-title mb-6">공유하기</h2>
 
-      <div className="grid grid-cols-2 gap-3 mb-8">
-        <button
-          onClick={share}
-          className="py-3 rounded-md bg-accent text-accent-foreground text-sm font-medium hover:bg-accent/90"
-        >
-          카카오톡 공유
-        </button>
-        <button
-          onClick={copyLink}
-          className="py-3 rounded-md bg-primary text-primary-foreground text-sm font-medium hover:bg-primary/90"
-        >
-          {copied ? "링크 복사됨" : "링크 복사"}
-        </button>
+      <div className="flex justify-center items-start gap-8 mb-10">
+        {/* KakaoTalk circle button */}
+        <div className="flex flex-col items-center gap-2">
+          <button
+            onClick={share}
+            aria-label="카카오톡으로 공유하기"
+            className="w-16 h-16 rounded-full bg-[#FEE500] text-[#3C1E1E] flex items-center justify-center text-2xl shadow-[var(--shadow-soft)] hover:scale-105 active:scale-95 transition"
+          >
+            💬
+          </button>
+          <span className="text-xs text-foreground/80 text-center leading-tight">
+            카카오톡으로
+            <br />
+            공유하기
+          </span>
+        </div>
+
+        {/* Copy link circle button */}
+        <div className="flex flex-col items-center gap-2">
+          <button
+            onClick={copyLink}
+            aria-label="링크 복사"
+            className="w-16 h-16 rounded-full bg-primary text-primary-foreground flex items-center justify-center text-2xl shadow-[var(--shadow-soft)] hover:scale-105 active:scale-95 transition"
+          >
+            🔗
+          </button>
+          <span className="text-xs text-foreground/80 text-center leading-tight">
+            {copied ? "복사됨!" : "링크 복사"}
+          </span>
+        </div>
       </div>
 
       <div className="flex justify-center">
@@ -43,7 +60,7 @@ export function FooterSection() {
         </div>
       </div>
 
-      <p className="text-center text-[10px] text-muted-foreground mt-8">
+      <p className="text-center text-xs font-medium text-primary/80 tracking-wider mt-8">
         with love · 2026.07.04
       </p>
     </section>

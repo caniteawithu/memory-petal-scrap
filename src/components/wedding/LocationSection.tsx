@@ -25,17 +25,18 @@ export function LocationSection() {
         href={mapUrl}
         target="_blank"
         rel="noopener noreferrer"
-        className="block w-full text-center py-3 rounded-md bg-accent text-accent-foreground text-sm font-medium hover:bg-accent/90 active:scale-[0.98] transition"
+        className="block w-full text-center py-3 rounded-md bg-accent text-accent-foreground text-base font-medium hover:bg-accent/90 active:scale-[0.98] transition"
       >
         길찾기
       </a>
 
-      <div className="mt-5 space-y-2 text-xs text-foreground/80 leading-relaxed text-center">
+      <div className="mt-5 space-y-3 text-sm text-foreground/85 leading-[1.85] text-center">
         <p>1호선 범일역 10번 출구에서 평화시장 지나 도보 5분</p>
         <p>자차 이용 시, 건물 주차장 이용 가능합니다.</p>
+        <p>건물 주차 혼잡하고 지하철이 가까우니<br />대중교통 이용을 권장 드립니다.</p>
         <p className="pt-2">
           📞 예식장 연락처{" "}
-          <a href="tel:0518638282" className="text-primary underline underline-offset-2">
+          <a href="tel:0518638282" className="text-primary font-medium underline underline-offset-2">
             051-863-8282
           </a>
         </p>
