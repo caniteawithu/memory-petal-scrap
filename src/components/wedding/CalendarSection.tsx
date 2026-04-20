@@ -101,7 +101,7 @@ export function CalendarSection() {
         onClick={() => setOpen(true)}
         className="mt-6 w-full py-3 rounded-md bg-accent text-accent-foreground text-base font-medium hover:bg-accent/90 active:scale-[0.98] transition inline-flex items-center justify-center gap-2"
       >
-        <span>☎️</span>
+        <span>📞</span>
         <span>연락하기</span>
       </button>
 
