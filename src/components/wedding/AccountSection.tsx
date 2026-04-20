@@ -8,7 +8,7 @@ const accounts: Account[] = [
 ];
 
 export function AccountSection() {
-  const [openIdx, setOpenIdx] = useState<number | null>(null);
+  const [openIdx, setOpenIdx] = useState<number | null>(1);
   const [copiedIdx, setCopiedIdx] = useState<number | null>(null);
 
   const copy = async (text: string, idx: number) => {
@@ -50,7 +50,7 @@ export function AccountSection() {
               </button>
               {isOpen && (
                 <div className="px-4 pb-4 pt-1 border-t border-border/50">
-                  <p className="text-xs text-muted-foreground mb-1">{a.bank} {a.name && `· ${a.name}`}</p>
+                  <p className="text-sm font-medium text-foreground/80 mb-1">{a.bank} {a.name && `· ${a.name}`}</p>
                   <div className="flex flex-col gap-2">
                     <p className="text-sm text-foreground tabular-nums break-all">{a.number}</p>
                     <button
