@@ -5,12 +5,12 @@ export function IntroTextSection() {
       style={{ fontFamily: "var(--font-serif)" }}
     >
       {/* Names */}
-      <h2 className="text-2xl font-bold text-primary tracking-wide">
-        구동환 <span className="text-accent">♥</span> 조현아
+      <h2 className="text-2xl font-bold text-primary tracking-wide text-[#799d43]">
+        구동환 <span className="text-accent text-xl">그리고</span> 조현아
       </h2>
 
       {/* Subtitle */}
-      <p className="text-xl text-foreground mt-3">결혼합니다</p>
+      <p className="text-foreground mt-3 text-[#799d43] font-bold text-2xl">결혼합니다 ♥</p>
 
       {/* Date & Place — emphasized */}
       <p className="text-base text-primary font-semibold leading-relaxed mt-7">
