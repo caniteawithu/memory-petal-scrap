@@ -82,17 +82,17 @@
   --radius: 0.5rem;
 
   /* Wedding palette */
-  --background: oklch(0.985 0.012 95);          /* #fffcf1 */
-  --foreground: oklch(0.36 0.03 50);            /* deep brown ink */
+  --background: oklch(0.985 0.012 95); /* #fffcf1 */
+  --foreground: oklch(0.36 0.03 50); /* deep brown ink */
   --paper: oklch(0.98 0.015 90);
 
-  --primary: oklch(0.42 0.04 55);               /* #6d5949 point 1 */
+  --primary: oklch(0.42 0.04 55); /* #6d5949 point 1 */
   --primary-foreground: oklch(0.985 0.012 95);
 
   --secondary: oklch(0.97 0.018 90);
   --secondary-foreground: oklch(0.42 0.04 55);
 
-  --accent: oklch(0.66 0.13 125);               /* #7a9d44 point 2 (lime/olive) */
+  --accent: oklch(0.66 0.13 125); /* #7a9d44 point 2 (lime/olive) */
   --accent-foreground: oklch(0.985 0.012 95);
 
   --muted: oklch(0.94 0.018 85);
@@ -129,17 +129,17 @@
   --sidebar-ring: var(--ring);
 
   /* Postit colors — natural paper tones (ivory/yellow/green/pink/kraft/white) */
-  --postit-1: oklch(0.96 0.022 95);   /* ivory */
-  --postit-2: oklch(0.95 0.055 100);  /* soft yellow */
-  --postit-3: oklch(0.94 0.045 130);  /* light green */
-  --postit-4: oklch(0.94 0.028 25);   /* soft pink */
-  --postit-5: oklch(0.82 0.045 70);   /* kraft brown */
-  --postit-6: oklch(0.985 0.005 95);  /* off-white lined */
+  --postit-1: oklch(0.96 0.022 95); /* ivory */
+  --postit-2: oklch(0.95 0.055 100); /* soft yellow */
+  --postit-3: oklch(0.94 0.045 130); /* light green */
+  --postit-4: oklch(0.94 0.028 25); /* soft pink */
+  --postit-5: oklch(0.82 0.045 70); /* kraft brown */
+  --postit-6: oklch(0.985 0.005 95); /* off-white lined */
 
   /* Masking tape tones */
-  --tape-1: oklch(0.92 0.07 95 / 0.75);   /* warm beige */
-  --tape-2: oklch(0.88 0.015 90 / 0.7);   /* translucent gray */
-  --tape-3: oklch(0.93 0.05 100 / 0.75);  /* pale yellow */
+  --tape-1: oklch(0.92 0.07 95 / 0.75); /* warm beige */
+  --tape-2: oklch(0.88 0.015 90 / 0.7); /* translucent gray */
+  --tape-3: oklch(0.93 0.05 100 / 0.75); /* pale yellow */
 
   /* Shadows & gradients */
   --shadow-paper: 0 1px 2px oklch(0 0 0 / 0.06), 0 8px 20px -8px oklch(0.36 0.03 50 / 0.18);
@@ -159,7 +159,8 @@
     border-color: var(--color-border);
   }
 
-  html, body {
+  html,
+  body {
     background-color: var(--color-background);
     color: var(--color-foreground);
     font-family: var(--font-sans);
@@ -169,20 +170,39 @@
     scroll-behavior: smooth;
   }
 
-  p { line-height: 1.95; }
-  input, textarea, button, select { font-family: var(--font-sans); font-size: 1.05rem; }
-  input::placeholder, textarea::placeholder { font-family: var(--font-sans); font-size: 1.05rem; }
+  p {
+    line-height: 1.75;
+  }
+  input,
+  textarea,
+  button,
+  select {
+    font-family: var(--font-sans);
+    font-size: 1.05rem;
+  }
+  input::placeholder,
+  textarea::placeholder {
+    font-family: var(--font-sans);
+    font-size: 1.05rem;
+  }
 
   body {
     /* Subtle paper grain */
     background-image:
       radial-gradient(oklch(0.36 0.03 50 / 0.025) 1px, transparent 1px),
       radial-gradient(oklch(0.36 0.03 50 / 0.02) 1px, transparent 1px);
-    background-size: 24px 24px, 13px 13px;
-    background-position: 0 0, 7px 7px;
+    background-size:
+      24px 24px,
+      13px 13px;
+    background-position:
+      0 0,
+      7px 7px;
   }
 
-  h1, h2, h3, h4 {
+  h1,
+  h2,
+  h3,
+  h4 {
     font-family: var(--font-sans);
     font-weight: 700;
     letter-spacing: -0.01em;
@@ -204,7 +224,9 @@
 
   @media (min-width: 481px) {
     .invitation-shell {
-      box-shadow: 0 10px 40px -10px oklch(0.36 0.03 50 / 0.25), 0 4px 12px oklch(0 0 0 / 0.08);
+      box-shadow:
+        0 10px 40px -10px oklch(0.36 0.03 50 / 0.25),
+        0 4px 12px oklch(0 0 0 / 0.08);
       margin-top: 1.5rem;
       margin-bottom: 1.5rem;
       border-radius: var(--radius-md);
@@ -263,8 +285,12 @@
     background-image:
       radial-gradient(oklch(0.36 0.03 50 / 0.04) 1px, transparent 1px),
       radial-gradient(oklch(0.36 0.03 50 / 0.03) 1px, transparent 1px);
-    background-size: 14px 14px, 9px 9px;
-    background-position: 0 0, 4px 4px;
+    background-size:
+      14px 14px,
+      9px 9px;
+    background-position:
+      0 0,
+      4px 4px;
     box-shadow:
       0 1px 1px oklch(0 0 0 / 0.05),
       0 6px 14px -8px oklch(0.36 0.03 50 / 0.25);
@@ -284,10 +310,8 @@
     transform: translateX(-50%) rotate(-3deg);
     box-shadow: 0 1px 2px oklch(0 0 0 / 0.08);
     /* serrated tape edges */
-    -webkit-mask-image:
-      linear-gradient(to right, transparent 0, #000 4px, #000 calc(100% - 4px), transparent 100%);
-            mask-image:
-      linear-gradient(to right, transparent 0, #000 4px, #000 calc(100% - 4px), transparent 100%);
+    -webkit-mask-image: linear-gradient(to right, transparent 0, #000 4px, #000 calc(100% - 4px), transparent 100%);
+    mask-image: linear-gradient(to right, transparent 0, #000 4px, #000 calc(100% - 4px), transparent 100%);
     opacity: 0.85;
   }
 
@@ -302,8 +326,12 @@
     transform: rotate(16deg);
     width: 38px;
   }
-  .paper-note.tape-gray::before { background: var(--tape-2); }
-  .paper-note.tape-yellow::before { background: var(--tape-3); }
+  .paper-note.tape-gray::before {
+    background: var(--tape-2);
+  }
+  .paper-note.tape-yellow::before {
+    background: var(--tape-3);
+  }
 
   .star-divider {
     display: flex;
@@ -316,8 +344,13 @@
 }
 
 @keyframes bounce-slow {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(8px); }
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(8px);
+  }
 }
 
 .animate-bounce-slow {
@@ -325,8 +358,12 @@
 }
 
 @keyframes slide-up {
-  from { transform: translateY(100%); }
-  to { transform: translateY(0); }
+  from {
+    transform: translateY(100%);
+  }
+  to {
+    transform: translateY(0);
+  }
 }
 
 .animate-slide-up {
@@ -334,8 +371,13 @@
 }
 
 @keyframes scroll-bounce {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(8px); }
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(8px);
+  }
 }
 
 .animate-scroll-bounce {
