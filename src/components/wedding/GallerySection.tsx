@@ -1,3 +1,4 @@
+import { Carousel, CarouselContent, CarouselItem } from "@/components/ui/carousel";
 import photoTitle from "@/assets/photo_title.png";
 import photo1 from "@/assets/photo1.png";
 import photo2 from "@/assets/photo2.png";
@@ -10,6 +11,12 @@ import photo8 from "@/assets/photo8.png";
 import photo9 from "@/assets/photo9.png";
 
 const photos = [photo1, photo2, photo3, photo4, photo5, photo6, photo7, photo8, photo9];
+
+// Group into pages of 3
+const pages: string[][] = [];
+for (let i = 0; i < photos.length; i += 3) {
+  pages.push(photos.slice(i, i + 3));
+}
 
 export function GallerySection() {
   return (
@@ -25,17 +32,26 @@ export function GallerySection() {
         </div>
       </div>
 
-      <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
-        {photos.map((src, i) => (
-          <img
-            key={i}
-            src={src}
-            alt={`gallery ${i + 1}`}
-            className="w-full h-auto object-contain"
-            loading="lazy"
-          />
-        ))}
-      </div>
+      <Carousel opts={{ align: "start", loop: false }} className="w-full">
+        <CarouselContent className="-ml-2">
+          {pages.map((group, idx) => (
+            <CarouselItem key={idx} className="pl-2 basis-full">
+              <div className="grid grid-cols-3 gap-2">
+                {group.map((src, i) => (
+                  <img
+                    key={i}
+                    src={src}
+                    alt={`gallery ${idx * 3 + i + 1}`}
+                    className="w-full h-auto object-contain select-none"
+                    draggable={false}
+                    loading="lazy"
+                  />
+                ))}
+              </div>
+            </CarouselItem>
+          ))}
+        </CarouselContent>
+      </Carousel>
     </section>
   );
 }
