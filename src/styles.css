@@ -6,8 +6,43 @@
 
 /* Korean Wedding Invitation — Vintage Collage Design System */
 
-@import url("https://cdn.jsdelivr.net/gh/noelngel/AritaDotum@master/css/AritaDotum.css");
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap");
+
+@font-face {
+  font-family: "AritaDotum";
+  src: url("/src/assets/fonts/AritaDotumKR-Thin.woff2") format("woff2");
+  font-weight: 200;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "AritaDotum";
+  src: url("/src/assets/fonts/AritaDotumKR-Light.woff2") format("woff2");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "AritaDotum";
+  src: url("/src/assets/fonts/AritaDotumKR-Medium.woff2") format("woff2");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "AritaDotum";
+  src: url("/src/assets/fonts/AritaDotumKR-SemiBold.woff2") format("woff2");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "AritaDotum";
+  src: url("/src/assets/fonts/AritaDotumKR-Bold.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
 
 @theme inline {
   --radius-sm: calc(var(--radius) - 4px);
@@ -39,8 +74,8 @@
   --color-tape: var(--tape);
   --color-ink: var(--ink);
 
-  --font-sans: "Arita Dotum", "Noto Sans KR", system-ui, sans-serif;
-  --font-serif: "Arita Dotum", "Noto Sans KR", system-ui, sans-serif;
+  --font-sans: "AritaDotum", "Noto Sans KR", system-ui, sans-serif;
+  --font-serif: "AritaDotum", "Noto Sans KR", system-ui, sans-serif;
 }
 
 :root {
