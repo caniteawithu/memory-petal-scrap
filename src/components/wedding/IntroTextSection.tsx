@@ -2,8 +2,8 @@ export function IntroTextSection() {
   return (
     <section className="px-6 pt-12 pb-12 text-center" style={{ fontFamily: "var(--font-serif)" }}>
       {/* Names */}
-      <h2 className="text-2xl font-bold text-primary tracking-wide">구동환 그리고 조현아<br>
-        결혼합니다♥</h2>
+      <h2 className="text-2xl font-bold text-primary tracking-wide text-[#799d43]">구동환 <span className="text-accent text-xl text-[#6e5a49]">그리고</span> 조현아<br />
+        결혼합니다 ♥</h2>
       {/* Date & Place — emphasized */}
       <p className="text-base text-primary font-semibold leading-relaxed mt-7">
         2026년 7월 4일 오후 12시 30분
