@@ -278,10 +278,10 @@
     line-height: 1.5;
   }
 
-  /* Paper note card with masking tape (guestbook) */
+  /* Paper note card (guestbook) */
   .paper-note {
     position: relative;
-    padding: 1rem 0.9rem 0.9rem;
+    padding: 0.9rem;
     border-radius: 2px;
     background-image:
       radial-gradient(oklch(0.36 0.03 50 / 0.04) 1px, transparent 1px),
@@ -295,43 +295,7 @@
     box-shadow:
       0 1px 1px oklch(0 0 0 / 0.05),
       0 6px 14px -8px oklch(0.36 0.03 50 / 0.25);
-    /* torn-ish soft edges via subtle inset */
     filter: drop-shadow(0 0 0.5px oklch(0.36 0.03 50 / 0.2));
-  }
-
-  .paper-note::before {
-    /* masking tape strip */
-    content: "";
-    position: absolute;
-    top: -8px;
-    left: 50%;
-    width: 46px;
-    height: 16px;
-    background: var(--tape-1);
-    transform: translateX(-50%) rotate(-3deg);
-    box-shadow: 0 1px 2px oklch(0 0 0 / 0.08);
-    /* serrated tape edges */
-    -webkit-mask-image: linear-gradient(to right, transparent 0, #000 4px, #000 calc(100% - 4px), transparent 100%);
-    mask-image: linear-gradient(to right, transparent 0, #000 4px, #000 calc(100% - 4px), transparent 100%);
-    opacity: 0.85;
-  }
-
-  .paper-note.tape-left::before {
-    left: 14px;
-    transform: rotate(-18deg);
-    width: 38px;
-  }
-  .paper-note.tape-right::before {
-    left: auto;
-    right: 14px;
-    transform: rotate(16deg);
-    width: 38px;
-  }
-  .paper-note.tape-gray::before {
-    background: var(--tape-2);
-  }
-  .paper-note.tape-yellow::before {
-    background: var(--tape-3);
   }
 
   .star-divider {

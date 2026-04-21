@@ -85,7 +85,6 @@ export function GuestbookSection() {
       </form>
 
       {(() => {
-        const tapeVariants = ["", "tape-left", "tape-right", "tape-gray", "tape-yellow"];
         const rotations = [-2, 1.5, -1, 2, -1.5, 1];
         if (messages.length === 0) {
           return (
@@ -108,7 +107,7 @@ export function GuestbookSection() {
             {messages.map((m, i) => (
               <div
                 key={i}
-                className={`paper-note break-inside-avoid mb-5 ${tapeVariants[i % tapeVariants.length]}`}
+                className="paper-note break-inside-avoid mb-5"
                 style={{
                   backgroundColor: POSTIT_VARS[m.color_index],
                   transform: `rotate(${rotations[i % rotations.length]}deg)`,
