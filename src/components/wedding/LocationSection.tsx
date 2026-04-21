@@ -34,12 +34,6 @@ export function LocationSection() {
         <p>1호선 범일역 10번 출구에서 평화시장 지나 도보 5분</p>
         <p>자차 이용 시, 건물 주차장 이용 가능합니다.</p>
         <p>건물 주차 혼잡하고 지하철이 가까우니<br />대중교통 이용을 권장 드립니다.</p>
-        <p className="pt-2">
-          📞 예식장 연락처{" "}
-          <a href="tel:0518638282" className="text-primary font-medium underline underline-offset-2">
-            051-863-8282
-          </a>
-        </p>
       </div>
     </section>
   );
