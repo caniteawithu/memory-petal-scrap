@@ -3,7 +3,7 @@ export function IntroTextSection() {
     <section className="px-6 pt-12 pb-12 text-center" style={{ fontFamily: "var(--font-serif)" }}>
       {/* Names */}
       <h2 className="text-2xl font-bold text-primary tracking-wide text-[#799d43]">
-        구동환 조현아
+        구동환 그리고 조현아
         <br />
         결혼합니다 ♥
       </h2>
