@@ -35,7 +35,7 @@ export function CalendarSection() {
 
   return (
     <section className="px-6">
-      <div className="bg-card rounded-md p-5 shadow-[var(--shadow-paper)] mx-2" style={{ transform: "rotate(-0.5deg)" }}>
+      <div className="bg-card rounded-md p-5 shadow-[var(--shadow-paper)] w-full max-w-sm mx-auto" style={{ transform: "rotate(-0.5deg)" }}>
         <p className="text-center font-serif text-lg mb-3 text-primary" style={{ fontFamily: "var(--font-serif)" }}>
           7월
         </p>
