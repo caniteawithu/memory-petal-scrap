@@ -6,7 +6,7 @@ export function IntroTextSection() {
     >
       {/* Names */}
       <h2 className="text-2xl font-bold text-primary tracking-wide text-[#799d43]">
-        구동환 <span className="text-accent text-xl">그리고</span> 조현아
+        구동환 <span className="text-accent text-xl text-[#6e5a49]">그리고</span> 조현아
       </h2>
 
       {/* Subtitle */}
