@@ -93,7 +93,7 @@ export function GuestbookSection() {
               {[0, 1, 2, 3].map((i) => (
                 <div
                   key={i}
-                  className={`paper-note aspect-square ${tapeVariants[i % tapeVariants.length]}`}
+                  className="paper-note aspect-square"
                   style={{
                     backgroundColor: POSTIT_VARS[i],
                     transform: `rotate(${rotations[i % rotations.length]}deg)`,
