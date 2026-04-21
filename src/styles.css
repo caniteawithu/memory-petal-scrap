@@ -6,7 +6,8 @@
 
 /* Korean Wedding Invitation — Vintage Collage Design System */
 
-@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&family=Gowun+Batang:wght@400;700&display=swap");
+@import url("https://cdn.jsdelivr.net/gh/noelngel/AritaDotum@master/css/AritaDotum.css");
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap");
 
 @theme inline {
   --radius-sm: calc(var(--radius) - 4px);
@@ -38,8 +39,8 @@
   --color-tape: var(--tape);
   --color-ink: var(--ink);
 
-  --font-sans: "Noto Sans KR", system-ui, sans-serif;
-  --font-serif: "Noto Sans KR", system-ui, sans-serif;
+  --font-sans: "Arita Dotum", "Noto Sans KR", system-ui, sans-serif;
+  --font-serif: "Arita Dotum", "Noto Sans KR", system-ui, sans-serif;
 }
 
 :root {
@@ -127,15 +128,15 @@
     background-color: var(--color-background);
     color: var(--color-foreground);
     font-family: var(--font-sans);
-    font-size: 17px;
-    line-height: 1.8;
+    font-size: 18px;
+    line-height: 1.9;
     -webkit-font-smoothing: antialiased;
     scroll-behavior: smooth;
   }
 
-  p { line-height: 1.85; }
-  input, textarea, button, select { font-size: 1rem; }
-  input::placeholder, textarea::placeholder { font-size: 1rem; }
+  p { line-height: 1.95; }
+  input, textarea, button, select { font-family: var(--font-sans); font-size: 1.05rem; }
+  input::placeholder, textarea::placeholder { font-family: var(--font-sans); font-size: 1.05rem; }
 
   body {
     /* Subtle paper grain */
