@@ -65,7 +65,7 @@ export function GuestbookSection() {
             placeholder="이름"
             maxLength={20}
             type="text"
-            className="col-span-1 rounded-md border border-input bg-background focus:outline-none focus:ring-2 focus:ring-primary/30 px-[8px] py-[6px] text-[11px] font-normal text-primary placeholder:text-[9px] placeholder:text-primary/70"
+            className="col-span-1 rounded-md border border-input bg-background focus:outline-none focus:ring-2 focus:ring-primary/30 px-[8px] py-[6px] font-normal text-primary placeholder:text-primary/70 text-xs text-center"
           />
           <input
             value={content}
@@ -73,7 +73,7 @@ export function GuestbookSection() {
             placeholder="축하 메시지를 남겨주세요"
             maxLength={200}
             type="text"
-            className="col-span-2 py-2 rounded-md border border-input bg-background focus:outline-none focus:ring-2 focus:ring-primary/30 px-[8px] text-[11px] font-normal text-center text-primary placeholder:text-[9px] placeholder:text-primary/70"
+            className="col-span-2 py-2 rounded-md border border-input bg-background focus:outline-none focus:ring-2 focus:ring-primary/30 px-[8px] font-normal text-center text-primary placeholder:text-primary/70 text-xs"
           />
         </div>
         <button
