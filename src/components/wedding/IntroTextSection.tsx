@@ -31,8 +31,13 @@ export function IntroTextSection() {
         <span className="h-px w-10 bg-accent/40" />
       </div>
 
+      {/* Dancing emojis — moved above body text */}
+      <p className="text-2xl my-4 leading-none" aria-hidden="true">
+        💃🏻 🪩 🕺🏻
+      </p>
+
       {/* Message */}
-      <p className="text-[17px] text-foreground/85 leading-[2] whitespace-pre-line">
+      <p className="text-[17px] text-foreground/85 leading-[2] whitespace-pre-line mt-4">
         {`비가 오면 그치길 바라는 게 아니라
 빗속에서 춤추는 법을 배우는 게 인생이래요.
 
@@ -42,8 +47,7 @@ export function IntroTextSection() {
 내일을 기대하는 마음으로
 함께 춤추며 살아가려 합니다.
 
-첫 스텝 밟는 날, 함께 축하해 주세요 🎶
-💃🏻🪩🕺🏻`}
+첫 스텝 밟는 날, 함께 축하해 주세요 🎶`}
       </p>
     </section>
   );
