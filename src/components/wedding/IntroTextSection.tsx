@@ -1,16 +1,11 @@
 export function IntroTextSection() {
   return (
-    <section
-      className="px-6 pt-12 text-center pb-[20px]"
-      style={{ fontFamily: "var(--font-serif)" }}
-    >
+    <section className="px-6 pt-12 pb-12 text-center" style={{ fontFamily: "var(--font-serif)" }}>
       {/* Names */}
-      <h2 className="text-2xl font-bold text-primary tracking-wide text-[#799d43]">
-        구동환 <span className="text-accent text-xl text-[#6e5a49]">그리고</span> 조현아
-      </h2>
+      <h2 className="text-2xl font-bold text-primary tracking-wide">구동환 그리고 조현아</h2>
 
       {/* Subtitle */}
-      <p className="text-foreground mt-3 text-[#799d43] font-bold text-2xl">결혼합니다 ♥</p>
+      <p className="text-xl text-foreground mt-3">결혼합니다♥</p>
 
       {/* Date & Place — emphasized */}
       <p className="text-base text-primary font-semibold leading-relaxed mt-7">
@@ -20,10 +15,7 @@ export function IntroTextSection() {
       </p>
 
       {/* Divider — rounder star style */}
-      <div
-        className="flex items-center justify-center gap-3 my-8 text-accent"
-        aria-hidden="true"
-      >
+      <div className="flex items-center justify-center gap-3 my-8 text-accent" aria-hidden="true">
         <span className="h-px w-10 bg-accent/40" />
         <span className="text-xl leading-none">✦</span>
         <span className="text-2xl leading-none">✿</span>
@@ -37,7 +29,7 @@ export function IntroTextSection() {
       </p>
 
       {/* Message */}
-      <p className="text-[17px] text-foreground/85 leading-[1.7] whitespace-pre-line mt-4">
+      <p className="text-[17px] text-foreground/85 leading-[2] whitespace-pre-line mt-4">
         {`비가 오면 그치길 바라는 게 아니라
 빗속에서 춤추는 법을 배우는 게 인생이래요.
 
