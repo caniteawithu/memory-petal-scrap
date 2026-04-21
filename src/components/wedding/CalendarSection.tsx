@@ -35,34 +35,38 @@ export function CalendarSection() {
 
   return (
     <section className="px-6">
-      <div className="bg-card rounded-md p-5 shadow-[var(--shadow-paper)] w-full max-w-sm mx-auto" style={{ transform: "rotate(-0.5deg)" }}>
-        <p className="text-center font-serif text-lg mb-3 text-primary" style={{ fontFamily: "var(--font-serif)" }}>
-          7월
-        </p>
-        <div className="grid grid-cols-7 gap-1 text-center text-xs overflow-visible">
-          {["일", "월", "화", "수", "목", "금", "토"].map((d, i) => (
-            <div key={d} className={`py-1 font-medium ${i === 0 ? "text-destructive/80" : "text-muted-foreground"}`}>
-              {d}
+      <div className="-mx-6 flex justify-center">
+        <div className="w-full max-w-sm px-6">
+          <div className="bg-card rounded-md p-5 shadow-[var(--shadow-paper)] w-full" style={{ transform: "rotate(-0.5deg)" }}>
+            <p className="text-center font-serif text-lg mb-3 text-primary" style={{ fontFamily: "var(--font-serif)" }}>
+              7월
+            </p>
+            <div className="grid grid-cols-7 gap-1 text-center text-xs overflow-visible">
+              {["일", "월", "화", "수", "목", "금", "토"].map((d, i) => (
+                <div key={d} className={`py-1 font-medium ${i === 0 ? "text-destructive/80" : "text-muted-foreground"}`}>
+                  {d}
+                </div>
+              ))}
+              {cells.map((d, i) => {
+                const isWeddingDay = d === 4;
+                return (
+                  <div key={i} className="aspect-square flex items-center justify-center">
+                    {d && (
+                      isWeddingDay ? (
+                        <span className="w-7 h-7 flex items-center justify-center rounded-full bg-accent text-[13px] font-bold text-primary-foreground shadow-sm">
+                          {d}
+                        </span>
+                      ) : (
+                        <span className="w-7 h-7 flex items-center justify-center rounded-full text-[15px] text-foreground/80">
+                          {d}
+                        </span>
+                      )
+                    )}
+                  </div>
+                );
+              })}
             </div>
-          ))}
-          {cells.map((d, i) => {
-            const isWeddingDay = d === 4;
-            return (
-              <div key={i} className="aspect-square flex items-center justify-center">
-                {d && (
-                  isWeddingDay ? (
-                    <span className="w-7 h-7 flex items-center justify-center rounded-full bg-accent text-[13px] font-bold text-primary-foreground shadow-sm">
-                      {d}
-                    </span>
-                  ) : (
-                    <span className="w-7 h-7 flex items-center justify-center rounded-full text-[15px] text-foreground/80">
-                      {d}
-                    </span>
-                  )
-                )}
-              </div>
-            );
-          })}
+          </div>
         </div>
       </div>
 
