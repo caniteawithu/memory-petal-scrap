@@ -1,7 +1,7 @@
 export function IntroTextSection() {
   return (
     <section
-      className="px-6 pt-12 pb-12 text-center"
+      className="px-6 pt-12 text-center pb-[20px]"
       style={{ fontFamily: "var(--font-serif)" }}
     >
       {/* Names */}
