@@ -1,4 +1,3 @@
-import { Carousel, CarouselContent, CarouselItem } from "@/components/ui/carousel";
 import photoTitle from "@/assets/photo_title.png";
 import photo1 from "@/assets/photo1.png";
 import photo2 from "@/assets/photo2.png";
@@ -32,26 +31,28 @@ export function GallerySection() {
         </div>
       </div>
 
-      <Carousel opts={{ align: "start", loop: false }} className="w-full">
-        <CarouselContent className="-ml-2">
-          {pages.map((group, idx) => (
-            <CarouselItem key={idx} className="pl-2 basis-full">
-              <div className="grid grid-cols-3 gap-2">
-                {group.map((src, i) => (
-                  <img
-                    key={i}
-                    src={src}
-                    alt={`gallery ${idx * 3 + i + 1}`}
-                    className="w-full h-auto object-contain select-none"
-                    draggable={false}
-                    loading="lazy"
-                  />
-                ))}
-              </div>
-            </CarouselItem>
-          ))}
-        </CarouselContent>
-      </Carousel>
+      <div
+        className="flex overflow-x-auto snap-x snap-mandatory scrollbar-none"
+        style={{ scrollbarWidth: "none" }}
+      >
+        {pages.map((group, idx) => (
+          <div
+            key={idx}
+            className="flex shrink-0 w-full gap-2 snap-start"
+          >
+            {group.map((src, i) => (
+              <img
+                key={i}
+                src={src}
+                alt={`gallery ${idx * 3 + i + 1}`}
+                className="w-1/3 h-auto object-cover select-none pointer-events-none"
+                draggable={false}
+                loading="lazy"
+              />
+            ))}
+          </div>
+        ))}
+      </div>
     </section>
   );
 }
