@@ -46,7 +46,7 @@ export function GuestbookSection() {
 
   return (
     <section className="px-6">
-      <div className="flex justify-center mb-5">
+      <div className="flex justify-center mb-5 text-center">
         <div className="w-[200px]">
           <img
             src={guestTitle}
@@ -64,19 +64,21 @@ export function GuestbookSection() {
             onChange={(e) => setAuthor(e.target.value)}
             placeholder="이름"
             maxLength={20}
-            className="col-span-1 rounded-md border border-input bg-background focus:outline-none focus:ring-2 focus:ring-primary/30 px-[8px] py-[6px] text-xs"
+            type="text"
+            className="col-span-1 rounded-md border border-input bg-background focus:outline-none focus:ring-2 focus:ring-primary/30 px-[8px] py-[6px] text-xs font-thin"
           />
           <input
             value={content}
             onChange={(e) => setContent(e.target.value)}
             placeholder="축하 메시지를 남겨주세요"
             maxLength={200}
-            className="col-span-2 py-2 rounded-md border border-input bg-background text-sm focus:outline-none focus:ring-2 focus:ring-primary/30 px-[8px]"
+            type="text"
+            className="col-span-2 py-2 rounded-md border border-input bg-background focus:outline-none focus:ring-2 focus:ring-primary/30 px-[8px] text-xs font-thin text-center"
           />
         </div>
         <button
           type="submit"
-          className="w-full py-3 rounded-md bg-accent text-accent-foreground font-medium hover:bg-accent/90 text-center text-sm"
+          className="w-full py-3 rounded-md bg-accent text-accent-foreground hover:bg-accent/90 text-center text-sm font-bold"
         >
           축하 메시지 남기기 🐾
         </button>

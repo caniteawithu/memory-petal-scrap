@@ -25,7 +25,7 @@ export function LocationSection() {
         href={mapUrl}
         target="_blank"
         rel="noopener noreferrer"
-        className="block w-full text-center py-3 rounded-md bg-accent text-accent-foreground text-base font-medium hover:bg-accent/90 active:scale-[0.98] transition"
+        className="block w-full text-center py-3 rounded-md bg-accent text-accent-foreground text-base hover:bg-accent/90 active:scale-[0.98] transition font-bold"
       >
         길찾기
       </a>
