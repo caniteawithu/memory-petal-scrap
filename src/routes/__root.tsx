@@ -29,14 +29,18 @@ export const Route = createRootRoute({
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Lovable App" },
-      { name: "description", content: "Lovable Generated Project" },
+      { title: "koo ♥ cho wedding" },
+      { name: "description", content: "구동환 ♥ 조현아 결혼식에 초대합니다" },
       { name: "author", content: "Lovable" },
-      { property: "og:title", content: "Lovable App" },
-      { property: "og:description", content: "Lovable Generated Project" },
+      { property: "og:title", content: "koo ♥ cho wedding" },
+      { property: "og:description", content: "구동환 ♥ 조현아 결혼식에 초대합니다" },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
       { name: "twitter:site", content: "@Lovable" },
+      { name: "twitter:title", content: "koo ♥ cho wedding" },
+      { name: "twitter:description", content: "구동환 ♥ 조현아 결혼식에 초대합니다" },
+      { property: "og:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/T8NT35sdKlaKu80WBI12enlDgKg2/social-images/social-1776778013921-IMG_0149.webp" },
+      { name: "twitter:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/T8NT35sdKlaKu80WBI12enlDgKg2/social-images/social-1776778013921-IMG_0149.webp" },
     ],
     links: [
       {
