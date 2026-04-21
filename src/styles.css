@@ -39,8 +39,8 @@
   --color-tape: var(--tape);
   --color-ink: var(--ink);
 
-  --font-sans: "Noto Sans KR", system-ui, sans-serif;
-  --font-serif: "Noto Sans KR", system-ui, sans-serif;
+  --font-sans: "Arita Dotum", "Noto Sans KR", system-ui, sans-serif;
+  --font-serif: "Arita Dotum", "Noto Sans KR", system-ui, sans-serif;
 }
 
 :root {
