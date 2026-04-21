@@ -64,19 +64,19 @@ export function GuestbookSection() {
             onChange={(e) => setAuthor(e.target.value)}
             placeholder="이름"
             maxLength={20}
-            className="col-span-1 px-3 py-2 rounded-md border border-input bg-background text-sm focus:outline-none focus:ring-2 focus:ring-primary/30"
+            className="col-span-1 rounded-md border border-input bg-background focus:outline-none focus:ring-2 focus:ring-primary/30 px-[8px] py-[6px] text-xs"
           />
           <input
             value={content}
             onChange={(e) => setContent(e.target.value)}
             placeholder="축하 메시지를 남겨주세요"
             maxLength={200}
-            className="col-span-2 px-3 py-2 rounded-md border border-input bg-background text-sm focus:outline-none focus:ring-2 focus:ring-primary/30"
+            className="col-span-2 py-2 rounded-md border border-input bg-background text-sm focus:outline-none focus:ring-2 focus:ring-primary/30 px-[8px]"
           />
         </div>
         <button
           type="submit"
-          className="w-full py-3 rounded-md bg-accent text-accent-foreground text-base font-medium hover:bg-accent/90 text-center"
+          className="w-full py-3 rounded-md bg-accent text-accent-foreground font-medium hover:bg-accent/90 text-center text-sm"
         >
           축하 메시지 남기기 🐾
         </button>
