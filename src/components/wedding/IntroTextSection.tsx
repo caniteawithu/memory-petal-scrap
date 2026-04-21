@@ -37,7 +37,7 @@ export function IntroTextSection() {
       </p>
 
       {/* Message */}
-      <p className="text-[17px] text-foreground/85 leading-[2] whitespace-pre-line mt-4">
+      <p className="text-[17px] text-foreground/85 leading-[1.7] whitespace-pre-line mt-4">
         {`비가 오면 그치길 바라는 게 아니라
 빗속에서 춤추는 법을 배우는 게 인생이래요.
 

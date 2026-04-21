@@ -22,33 +22,17 @@ export function FooterSection() {
     <section className="px-6 pb-12">
       <h2 className="section-title mb-6">공유하기</h2>
 
-      <div className="flex justify-center items-start gap-8 mb-10">
-        {/* KakaoTalk circle button */}
-        <div className="flex flex-col items-center gap-2">
-          <button
-            onClick={share}
-            aria-label="카카오톡으로 공유하기"
-            className="w-16 h-16 rounded-full bg-[#FEE500] text-[#3C1E1E] flex items-center justify-center text-2xl shadow-[var(--shadow-soft)] hover:scale-105 active:scale-95 transition"
-          >
-            💬
-          </button>
-          <span className="text-xs text-foreground/80 text-center leading-tight">
-            카카오톡으로
-            <br />
-            공유하기
-          </span>
-        </div>
-
+      <div className="flex justify-center items-start mb-10">
         {/* Copy link circle button */}
         <div className="flex flex-col items-center gap-2">
           <button
             onClick={copyLink}
             aria-label="링크 복사"
-            className="w-16 h-16 rounded-full bg-primary text-primary-foreground flex items-center justify-center text-2xl shadow-[var(--shadow-soft)] hover:scale-105 active:scale-95 transition"
+            className="w-12 h-12 rounded-full bg-primary text-primary-foreground flex items-center justify-center text-lg shadow-[var(--shadow-soft)] hover:scale-105 active:scale-95 transition"
           >
             🔗
           </button>
-          <span className="text-xs text-foreground/80 text-center leading-tight">
+          <span className="text-[11px] text-foreground/80 text-center leading-tight">
             {copied ? "복사됨!" : "링크 복사"}
           </span>
         </div>
