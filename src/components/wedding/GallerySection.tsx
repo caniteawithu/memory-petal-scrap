@@ -11,12 +11,6 @@ import photo9 from "@/assets/photo9.png";
 
 const photos = [photo1, photo2, photo3, photo4, photo5, photo6, photo7, photo8, photo9];
 
-// Group into pages of 3
-const pages: string[][] = [];
-for (let i = 0; i < photos.length; i += 3) {
-  pages.push(photos.slice(i, i + 3));
-}
-
 export function GallerySection() {
   return (
     <section className="px-6">
@@ -32,25 +26,22 @@ export function GallerySection() {
       </div>
 
       <div
-        className="flex overflow-x-auto snap-x snap-mandatory scrollbar-none"
-        style={{ scrollbarWidth: "none" }}
+        className="grid mx-auto"
+        style={{
+          gridTemplateColumns: "repeat(3, 1fr)",
+          gap: "8px",
+        }}
       >
-        {pages.map((group, idx) => (
-          <div
-            key={idx}
-            className="flex shrink-0 w-full gap-2 snap-start"
-          >
-            {group.map((src, i) => (
-              <img
-                key={i}
-                src={src}
-                alt={`gallery ${idx * 3 + i + 1}`}
-                className="w-1/3 h-auto object-cover select-none pointer-events-none"
-                draggable={false}
-                loading="lazy"
-              />
-            ))}
-          </div>
+        {photos.map((src, i) => (
+          <img
+            key={i}
+            src={src}
+            alt={`gallery ${i + 1}`}
+            className="w-full h-full object-cover select-none pointer-events-none"
+            style={{ aspectRatio: "1 / 1" }}
+            draggable={false}
+            loading="lazy"
+          />
         ))}
       </div>
     </section>
