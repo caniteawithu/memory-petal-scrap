@@ -4,9 +4,6 @@ import { Placeholder } from "./Placeholder";
 export function FooterSection() {
   const [copied, setCopied] = useState(false);
 
-  const share = () => {
-    alert("카카오톡 공유 기능은 카카오 SDK 키 등록 후 활성화됩니다.");
-  };
 
   const copyLink = async () => {
     try {
