@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Placeholder } from "./Placeholder";
+import endImage from "@/assets/end.png";
 
 export function FooterSection() {
   const [copied, setCopied] = useState(false);
@@ -36,8 +36,13 @@ export function FooterSection() {
       </div>
 
       <div className="flex justify-center">
-        <div className="w-[180px]" style={{ transform: "rotate(-1.5deg)" }}>
-          <Placeholder filename="end.png (하단 이미지)" aspect="aspect-[4/3]" />
+        <div className="w-[220px]">
+          <img
+            src={endImage}
+            alt="end"
+            className="w-full h-auto select-none pointer-events-none"
+            draggable={false}
+          />
         </div>
       </div>
 
