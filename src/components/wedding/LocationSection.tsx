@@ -30,16 +30,18 @@ export function LocationSection() {
       >
         {/* 장소 */}
         <div className="pb-4 border-b border-border/50">
-          <p className="flex items-center gap-2 font-semibold text-foreground">
-            더블유웨딩시티 5층 스위트가든홀
+          <div className="flex items-center justify-between gap-3">
+            <p className="font-semibold text-foreground">
+              더블유웨딩시티 5층 스위트가든홀
+            </p>
             <a
               href={`tel:${VENUE_TEL.replace(/-/g, "")}`}
               aria-label="전화 걸기"
-              className="text-accent text-base"
+              className="shrink-0 text-xs px-2.5 py-1.5 rounded bg-accent/15 text-accent hover:bg-accent/25 inline-flex items-center gap-1"
             >
               📞
             </a>
-          </p>
+          </div>
           <div className="mt-2 flex items-center justify-between gap-3">
             <p className="text-foreground/80">{ADDRESS}</p>
             <button
@@ -49,6 +51,16 @@ export function LocationSection() {
             >
               {copied ? "복사됨" : "복사"}
             </button>
+          </div>
+          <div className="mt-3 overflow-hidden rounded-md border border-border/50">
+            <iframe
+              src="https://www.openstreetmap.org/export/embed.html?bbox=129.0540%2C35.1410%2C129.0640%2C35.1490&amp;layer=mapnik&amp;marker=35.1450%2C129.0590"
+              title="더블유웨딩시티 위치"
+              width="100%"
+              height="300"
+              style={{ border: 0 }}
+              loading="lazy"
+            />
           </div>
         </div>
 
