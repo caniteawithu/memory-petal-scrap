@@ -14,14 +14,14 @@ export function ContactSection() {
           <span className="text-primary">구자홍</span>
           <span className="mx-1.5 text-accent">·</span>
           <span className="text-primary">김민손</span>
-          <span className="text-foreground/70">의 아들</span>
-          <span className="ml-2 font-semibold text-foreground">구동환</span>
+          <span className="text-foreground/70 text-right">의 아들</span>
+          <span className="font-semibold text-foreground ml-[9px] mx-[7px] mr-[8px] text-center">구동환            </span>
         </p>
-        <p className="text-center">
+        <p className="">
           <span className="invisible">구자홍 ·{" "}</span>
-          <span className="text-primary">이명화</span>
-          <span className="text-foreground/70">의&nbsp;&nbsp;&nbsp;딸</span>
-          <span className="ml-2 font-semibold text-foreground">조현아</span>
+          <span className="text-primary mx-0 ml-[11px]"> 이명화</span>
+          <span className="text-foreground/70 text-right mr-[7px]">의&nbsp;&nbsp;딸</span>
+          <span className="font-semibold text-foreground mx-0 ml-[9px] mr-0 text-center">조현아</span>
         </p>
       </div>
 
