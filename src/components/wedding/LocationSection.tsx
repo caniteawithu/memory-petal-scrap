@@ -54,7 +54,7 @@ export function LocationSection() {
           </div>
           <div className="mt-3 overflow-hidden rounded-md border border-border/50">
             <iframe
-              src="https://map.kakao.com/?urlX=476795&urlY=1097643&urlLevel=3&map_type=TYPE_MAP&map_attribute=ROADVIEW&itemId=&q=%EB%B6%80%EC%82%B0%EA%B4%91%EC%97%AD%EC%8B%9C%20%EB%B6%80%EC%82%B0%EC%A7%84%EA%B5%AC%20%EC%9E%90%EC%9C%A0%ED%8F%89%ED%99%94%EB%A1%9C%2011"
+              src="https://www.openstreetmap.org/export/embed.html?bbox=129.0540%2C35.1410%2C129.0640%2C35.1490&amp;layer=mapnik&amp;marker=35.1450%2C129.0590"
               title="더블유웨딩시티 위치"
               width="100%"
               height="300"
