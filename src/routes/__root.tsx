@@ -28,7 +28,7 @@ export const Route = createRootRoute({
   head: () => ({
     meta: [
       { charSet: "utf-8" },
-      { name: "viewport", content: "width=device-width, initial-scale=1" },
+      { name: "viewport", content: "width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, viewport-fit=cover" },
       { title: "koo ♥ cho wedding" },
       { name: "description", content: "구동환 ♥ 조현아 결혼식에 초대합니다" },
       { name: "author", content: "Lovable" },

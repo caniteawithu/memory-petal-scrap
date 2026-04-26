@@ -349,3 +349,17 @@
   animation: scroll-bounce 1.4s ease-in-out infinite;
   will-change: transform;
 }
+
+/* Disable image zoom / pinch / double-tap zoom across the app */
+html,
+body {
+  touch-action: pan-x pan-y;
+  -ms-touch-action: pan-x pan-y;
+}
+img {
+  touch-action: none;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  user-select: none;
+  pointer-events: none;
+}
