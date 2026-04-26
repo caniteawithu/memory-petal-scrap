@@ -2,13 +2,14 @@ import introImg from "@/assets/intro.jpeg";
 
 export function IntroSection() {
   return (
-    <section className="relative w-full h-screen m-0 p-0 overflow-hidden">
-      {/* Hero image */}
+    <section className="relative w-full h-[100svh] m-0 p-0 overflow-hidden">
+      {/* Hero image - static, no scroll animation */}
       <img
         src={introImg}
         alt="Happy wedding day - 구동환 조현아"
         className="absolute inset-0 w-full h-full object-cover object-center select-none pointer-events-none"
         draggable={false}
+        style={{ transform: "none" }}
       />
 
       {/* Subtle bottom gradient for indicator readability */}

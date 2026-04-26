@@ -1,4 +1,5 @@
 import { useState } from "react";
+import mapImg from "@/assets/map2.png";
 
 const ADDRESS = "부산광역시 부산진구 자유평화로 11";
 const VENUE_TEL = "051-863-8282";
@@ -52,14 +53,12 @@ export function LocationSection() {
               {copied ? "복사됨" : "복사"}
             </button>
           </div>
-          <div className="mt-3 overflow-hidden rounded-md border border-border/50">
-            <iframe
-              src="https://www.openstreetmap.org/export/embed.html?bbox=129.0540%2C35.1410%2C129.0640%2C35.1490&amp;layer=mapnik&amp;marker=35.1450%2C129.0590"
-              title="더블유웨딩시티 위치"
-              width="100%"
-              height="300"
-              style={{ border: 0 }}
-              loading="lazy"
+          <div className="mt-3">
+            <img
+              src={mapImg}
+              alt="더블유웨딩시티 약도"
+              className="w-full h-auto select-none"
+              draggable={false}
             />
           </div>
         </div>
