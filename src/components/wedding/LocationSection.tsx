@@ -47,7 +47,7 @@ export function LocationSection() {
               aria-label="주소 복사"
               className="shrink-0 text-xs px-2.5 py-1.5 rounded bg-accent/15 text-accent hover:bg-accent/25 inline-flex items-center gap-1"
             >
-              {copied ? "복사됨" : "📋 복사"}
+              {copied ? "복사됨" : "복사"}
             </button>
           </div>
         </div>
