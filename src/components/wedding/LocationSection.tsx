@@ -31,26 +31,26 @@ export function LocationSection() {
       >
         {/* 장소 */}
         <div className="pb-4 border-b border-border/50">
-          <div className="flex items-center justify-between gap-3">
-            <p className="font-semibold text-foreground">
+          <div className="flex items-center justify-between gap-3 text-center">
+            <p className="font-semibold text-foreground text-center">
               더블유웨딩시티 5층 스위트가든홀
             </p>
             <a
               href={`tel:${VENUE_TEL.replace(/-/g, "")}`}
               aria-label="전화 걸기"
-              className="shrink-0 text-xs px-2.5 py-1.5 rounded bg-accent/15 text-accent hover:bg-accent/25 inline-flex items-center gap-1"
+              className="shrink-0 text-xs px-2.5 py-1.5 rounded bg-accent/15 text-accent hover:bg-accent/25 inline-flex items-center gap-1 font-extrabold"
             >
-              📞
+              ↗
             </a>
           </div>
           <div className="mt-2 flex items-center justify-between gap-3">
-            <p className="text-foreground/80">{ADDRESS}</p>
+            <p className="text-foreground/80 font-semibold">{ADDRESS}</p>
             <button
               onClick={copyAddress}
               aria-label="주소 복사"
-              className="shrink-0 text-xs px-2.5 py-1.5 rounded bg-accent/15 text-accent hover:bg-accent/25 inline-flex items-center gap-1"
+              className="shrink-0 text-xs px-2.5 py-1.5 rounded bg-accent/15 text-accent hover:bg-accent/25 inline-flex items-center gap-1 font-extrabold"
             >
-              {copied ? "복사됨" : "복사"}
+              {copied ? "복사됨" : "​⧉"}
             </button>
           </div>
           <div className="mt-3">
