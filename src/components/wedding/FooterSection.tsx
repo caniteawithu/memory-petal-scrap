@@ -93,25 +93,23 @@ export function FooterSection() {
 
 건강하고 행복하세요!
 
-구동환 그리고 조현아 드림`}
+구동환 그리고 조현아 드림 💛`}
       </p>
 
       <div className="flex flex-col gap-3 mt-8">
         <button
           onClick={shareKakao}
-          className="w-full py-3.5 px-5 rounded-md flex items-center justify-between text-sm font-medium active:scale-[0.99] transition"
-          style={{ backgroundColor: "#f4e07a", color: "#3a3a3a" }}
+          className="w-full py-3.5 px-5 rounded-md flex items-center justify-between text-sm active:scale-[0.99] transition bg-[#799d43] text-slate-100 font-semibold text-center"
         >
-          <span>카카오톡으로 청첩장 전하기</span>
-          <span aria-hidden className="text-base">↗</span>
+          <span className="text-center">카카오톡으로 청첩장 전하기</span>
+          <span aria-hidden className="text-base">​💬</span>
         </button>
         <button
           onClick={copyLink}
-          className="w-full py-3.5 px-5 rounded-md flex items-center justify-between text-sm font-medium text-white active:scale-[0.99] transition"
-          style={{ backgroundColor: "#9aa5c4" }}
+          className="w-full py-3.5 px-5 rounded-md flex items-center justify-between text-sm text-white active:scale-[0.99] transition bg-[#6e5a49] font-semibold"
         >
           <span>{copied ? "주소가 복사되었습니다" : "청첩장 주소 복사하기"}</span>
-          <span aria-hidden className="text-base">⧉</span>
+          <span aria-hidden className="text-base">​🔗</span>
         </button>
       </div>
 
