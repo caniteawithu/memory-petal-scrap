@@ -1,32 +1,82 @@
-import mapImage from "@/assets/map.png";
+import { useState } from "react";
+
+const ADDRESS = "부산광역시 부산진구 자유평화로 11";
+const VENUE_TEL = "051-863-8282";
 
 export function LocationSection() {
+  const [copied, setCopied] = useState(false);
+
   const kakaoMapUrl =
     "https://map.kakao.com/link/search/" +
     encodeURIComponent("부산광역시 부산진구 자유평화로 11 W웨딩시티");
 
+  const copyAddress = async () => {
+    try {
+      await navigator.clipboard.writeText(ADDRESS);
+      setCopied(true);
+      setTimeout(() => setCopied(false), 1500);
+    } catch {
+      // ignore
+    }
+  };
+
   return (
     <section className="px-6">
-      <h2 className="section-title mb-6">🚌 오시는 길</h2>
-
-      <div className="mb-6">
-        <img
-          src={mapImage}
-          alt="약도"
-          className="block w-full h-auto rounded-xl select-none pointer-events-none"
-          draggable={false}
-          loading="lazy"
-        />
-      </div>
+      <h2 className="section-title mb-6">🚌 오시는 길 안내</h2>
 
       <div
-        className="text-center text-sm text-foreground/85 leading-[1.9] whitespace-pre-line"
+        className="text-left text-sm text-foreground/85 leading-[1.9]"
         style={{ fontFamily: "var(--font-serif)" }}
       >
-{`부산광역시 부산진구 자유평화로 11 (구. 누리엔)
-더블유웨딩시티 5층 스위트가든홀 (Tel. 051-863-8282)
-🚃 범일역 1호선 10번 출구에서 도보 5분
-🚗 건물 지하 주차장 이용 가능 (주차요원의 안내를 받으세요.)`}
+        {/* 장소 */}
+        <div className="pb-4 border-b border-border/50">
+          <p className="flex items-center gap-2 font-semibold text-foreground">
+            더블유웨딩시티 5층 스위트가든홀
+            <a
+              href={`tel:${VENUE_TEL.replace(/-/g, "")}`}
+              aria-label="전화 걸기"
+              className="text-accent text-base"
+            >
+              📞
+            </a>
+          </p>
+          <div className="mt-2 flex items-center justify-between gap-3">
+            <p className="text-foreground/80">{ADDRESS}</p>
+            <button
+              onClick={copyAddress}
+              aria-label="주소 복사"
+              className="shrink-0 text-xs px-2.5 py-1.5 rounded bg-accent/15 text-accent hover:bg-accent/25 inline-flex items-center gap-1"
+            >
+              {copied ? "복사됨" : "📋 복사"}
+            </button>
+          </div>
+        </div>
+
+        {/* 자차 */}
+        <div className="py-4 border-b border-border/50">
+          <p className="font-semibold text-primary mb-1.5">🚗 자차</p>
+          <p className="text-foreground/80">
+            더블유웨딩시티 건물 지하 주차장 이용
+          </p>
+        </div>
+
+        {/* 지하철 */}
+        <div className="py-4 border-b border-border/50">
+          <p className="font-semibold text-primary mb-1.5">🚃 지하철</p>
+          <p className="text-foreground/80">1호선 범일역 10번출구 도보 5분</p>
+          <p className="text-foreground/80">2호선 문현역 3번출구 도보 10분</p>
+        </div>
+
+        {/* 버스 */}
+        <div className="py-4">
+          <p className="font-semibold text-primary mb-1.5">🚌 버스</p>
+          <p className="text-foreground/80 mb-2">
+            22번, 27번, 49번, 42번, 57번, 68번, 80번 자유시장 앞 하차 후 도보 3분
+          </p>
+          <p className="text-foreground/80">
+            5-1번, 10번, 23번, 52번, 81번, 83번, 99번, 111번, 148번 중앙시장역 하차 후 도보 7분
+          </p>
+        </div>
       </div>
 
       <a
