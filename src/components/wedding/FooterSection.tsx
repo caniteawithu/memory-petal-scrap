@@ -11,7 +11,6 @@ const KAKAO_JS_KEY = ""; // 미설정 시 fallback으로 링크 복사 동작
 
 export function FooterSection() {
   const [copied, setCopied] = useState(false);
-  const [shared, setShared] = useState(false);
 
   useEffect(() => {
     if (!KAKAO_JS_KEY) return;
@@ -35,7 +34,7 @@ export function FooterSection() {
     try {
       await navigator.clipboard.writeText(window.location.href);
       setCopied(true);
-      setTimeout(() => setCopied(false), 1500);
+      setTimeout(() => setCopied(false), 1800);
     } catch {
       // ignore
     }
@@ -55,10 +54,18 @@ export function FooterSection() {
         });
         return;
       }
-      // Fallback: 링크 복사
+      // Fallback: Web Share API → 링크 복사
+      if (navigator.share) {
+        await navigator.share({
+          title: "구동환 ♡ 조현아 결혼합니다",
+          text: "2026.07.04 토요일 · 더블유웨딩시티 5층 스위트가든홀",
+          url: window.location.href,
+        });
+        return;
+      }
       await navigator.clipboard.writeText(window.location.href);
-      setShared(true);
-      setTimeout(() => setShared(false), 1500);
+      setCopied(true);
+      setTimeout(() => setCopied(false), 1800);
     } catch {
       // ignore
     }
@@ -77,22 +84,34 @@ export function FooterSection() {
         </div>
       </div>
 
-      <div className="flex justify-center items-center gap-6 mt-8">
-        <button
-          onClick={copyLink}
-          aria-label="링크 복사"
-          title={copied ? "복사됨!" : "링크 복사"}
-          className="w-12 h-12 rounded-full bg-primary text-primary-foreground flex items-center justify-center text-lg shadow-[var(--shadow-soft)] hover:scale-105 active:scale-95 transition"
-        >
-          🔗
-        </button>
+      <p
+        className="text-center text-sm text-foreground/85 leading-[2] mt-6 whitespace-pre-line"
+        style={{ fontFamily: "var(--font-serif)" }}
+      >
+{`축하해 주시는 모든 분들께
+진심으로 감사드립니다.
+
+건강하고 행복하세요!
+
+구동환 그리고 조현아 드림`}
+      </p>
+
+      <div className="flex flex-col gap-3 mt-8">
         <button
           onClick={shareKakao}
-          aria-label="카카오톡 공유"
-          title={shared ? "복사됨!" : "카카오톡 공유"}
-          className="w-12 h-12 rounded-full bg-primary text-primary-foreground flex items-center justify-center text-lg shadow-[var(--shadow-soft)] hover:scale-105 active:scale-95 transition"
+          className="w-full py-3.5 px-5 rounded-md flex items-center justify-between text-sm font-medium active:scale-[0.99] transition"
+          style={{ backgroundColor: "#f4e07a", color: "#3a3a3a" }}
         >
-          💬
+          <span>카카오톡으로 청첩장 전하기</span>
+          <span aria-hidden className="text-base">↗</span>
+        </button>
+        <button
+          onClick={copyLink}
+          className="w-full py-3.5 px-5 rounded-md flex items-center justify-between text-sm font-medium text-white active:scale-[0.99] transition"
+          style={{ backgroundColor: "#9aa5c4" }}
+        >
+          <span>{copied ? "주소가 복사되었습니다" : "청첩장 주소 복사하기"}</span>
+          <span aria-hidden className="text-base">⧉</span>
         </button>
       </div>
 

@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import { ContactModal } from "./ContactModal";
 
 const WEDDING_DATE = new Date("2026-07-04T12:30:00+09:00");
 
@@ -21,7 +20,6 @@ function useCountdown() {
 
 export function CalendarSection() {
   const { days, hours, minutes, seconds, ready } = useCountdown();
-  const [open, setOpen] = useState(false);
 
   // July 2026: starts on Wednesday (day index 3). 31 days.
   const month = 7;
@@ -91,14 +89,6 @@ export function CalendarSection() {
         ))}
       </div>
 
-      <button
-        onClick={() => setOpen(true)}
-        className="mt-6 w-full py-3 rounded-md bg-accent text-accent-foreground text-base font-bold hover:bg-accent/90 active:scale-[0.98] transition inline-flex items-center justify-center gap-2"
-      >
-        <span className="text-sm">📞 혼주에게 연락하기</span>
-      </button>
-
-      <ContactModal open={open} onClose={() => setOpen(false)} />
     </section>
   );
 }
