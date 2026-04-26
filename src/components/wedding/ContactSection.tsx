@@ -19,7 +19,7 @@ export function ContactSection() {
         </p>
         <p className="text-center">
           <span className="invisible">구자홍 ·{" "}</span>
-          <span className="text-primary mx-[96px] mr-0 ml-0"> 이명화</span>
+          <span className="text-primary mx-[96px] mr-0 ml-[5px]"> 이명화</span>
           <span className="text-foreground/70 text-right mr-0">의  장녀</span>
           <span className="font-semibold text-foreground text-center mr-0 mx-[12px] ml-[12px]">조현아</span>
         </p>
