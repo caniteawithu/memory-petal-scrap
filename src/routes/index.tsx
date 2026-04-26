@@ -2,6 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { IntroSection } from "@/components/wedding/IntroSection";
 import { IntroTextSection } from "@/components/wedding/IntroTextSection";
 import { CalendarSection } from "@/components/wedding/CalendarSection";
+import { ContactSection } from "@/components/wedding/ContactSection";
 import { GallerySection } from "@/components/wedding/GallerySection";
 import { LocationSection } from "@/components/wedding/LocationSection";
 import { AccountSection } from "@/components/wedding/AccountSection";
@@ -30,6 +31,8 @@ function WeddingInvitation() {
         <IntroTextSection />
         <StarDivider />
         <CalendarSection />
+        <StarDivider />
+        <ContactSection />
         <StarDivider />
         <GallerySection />
         <StarDivider />
