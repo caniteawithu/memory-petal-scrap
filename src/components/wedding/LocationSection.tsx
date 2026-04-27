@@ -67,7 +67,7 @@ export function LocationSection() {
         <div className="py-4 border-b border-border/50">
           <p className="font-semibold text-primary mb-1.5">🚗 자차</p>
           <p className="text-foreground/80">
-            더블유웨딩시티 건물 지하 주차장 이용
+            더블유웨딩시티 건물 지하 주차장과 외부 주차장을 이용할 수 있습니다. 주차요원의 안내에 따라 주세요.
           </p>
         </div>
 

@@ -35,9 +35,8 @@ export function AccountSection() {
     <section className="px-6">
       <h2 className="section-title mb-4">💌 마음 전하실 곳</h2>
 
-      <p className="text-center text-sm text-foreground/80 leading-[1.95] mb-6 whitespace-pre-line" style={{ fontFamily: "var(--font-serif)" }}>
-{`멀리서도 축하의 마음을
-전하고 싶으신 분들을 위해
+      <p className="text-center text-foreground/80 leading-[1.95] mb-6 whitespace-pre-line text-sm" style={{ fontFamily: "var(--font-serif)" }}>
+{`멀리서도 축하의 마음을 전하고 싶으신 분들을 위해
 계좌번호를 안내드립니다.
 
 소중한 축하를 보내주셔서 감사드리며,

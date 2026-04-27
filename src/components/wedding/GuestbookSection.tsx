@@ -169,7 +169,7 @@ export function GuestbookSection() {
                 <p className="text-sm text-foreground/85 leading-relaxed whitespace-pre-wrap">
                   {m.content}
                 </p>
-                <p className="mt-2 text-[11px] text-foreground/60 text-right">— {m.author}</p>
+                <p className="mt-2 text-foreground/60 text-right text-xs font-medium">— {m.author}</p>
               </div>
             ))}
           </div>
