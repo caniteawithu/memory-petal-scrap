@@ -121,6 +121,7 @@ export function GuestbookSection() {
           <input
             value={author}
             onChange={(e) => setAuthor(e.target.value)}
+            onKeyDown={(e) => { if (e.key === "Enter") e.preventDefault(); }}
             placeholder="이름"
             maxLength={20}
             type="text"
@@ -129,6 +130,7 @@ export function GuestbookSection() {
           <input
             value={content}
             onChange={(e) => setContent(e.target.value)}
+            onKeyDown={(e) => { if (e.key === "Enter") e.preventDefault(); }}
             placeholder="축하 메시지를 남겨주세요"
             maxLength={200}
             type="text"
