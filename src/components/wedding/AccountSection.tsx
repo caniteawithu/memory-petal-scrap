@@ -4,7 +4,7 @@ type Account = { side: "신랑" | "신부"; bank: string; number: string; name?:
 
 const accounts: Account[] = [
   { side: "신랑", bank: "기업은행", number: "010-6507-3885", name: "구동환", extra: { label: "신랑 아버지 |", bank: "농협은행", number: "801191-52-064616", name: "구자홍" } },
-  { side: "신부", bank: "카카오뱅크", number: "3333-15-5072765", name: "조현아", extra: { label: "신부 어머니", bank: "국민은행", number: "573102-95-101535", name: "이명화" } },
+  { side: "신부", bank: "카카오뱅크", number: "3333-15-5072765", name: "조현아", extra: { label: "신부 어머니 | ", bank: "국민은행", number: "573102-95-101535", name: "이명화" } },
 ];
 
 export function AccountSection() {
