@@ -5,7 +5,7 @@ const DRIVER_TEL = "010-5596-7015";
 const BUS_INFO = "영진고속관광 경남72 바 9774";
 
 const SCHEDULE = [
-  { time: "9:00", place: "진주 신안동 공설운동장 1문" },
+  { time: "9:00", place: "진주 신안동 공설 운동장 1주차장 입구" },
   { time: "9:20", place: "진주 초전 농산물 공판장" },
 ];
 
@@ -18,16 +18,13 @@ export function ShuttleBusSection() {
       <h2 className="section-title mb-6">🚌 진주 출발 하객 전세버스 안내</h2>
 
       <p
-        className="text-center text-sm text-foreground/80 leading-[1.9] mb-6"
+        className="text-center text-sm text-foreground/80 leading-[1.9] mb-6 whitespace-pre-line"
         style={{ fontFamily: "var(--font-serif)" }}
       >
-        먼 거리에서 오시는 하객분들을 위해
-        <br />
-        결혼식 당일 전세버스를 준비하였습니다.
-        <br />
-        기쁜 마음으로 자리를 빛내주시면
-        <br />
-        감사한 마음으로 모시겠습니다.
+        {`먼 거리에서 오시는 하객분들을 위해
+결혼식 당일 전세버스를 준비하였습니다.
+기쁜 마음으로 자리를 빛내주시면
+감사한 마음으로 모시겠습니다.`}
       </p>
 
       {/* 버스 정보 카드 */}
@@ -87,12 +84,11 @@ export function ShuttleBusSection() {
       </div>
 
       <p
-        className="text-foreground/60 leading-[1.8] text-center font-sans text-base"
+        className="text-foreground/60 leading-[1.8] text-center font-sans text-base whitespace-pre-line"
         style={{ fontFamily: "var(--font-serif)" }}
       >
-        예식 후 부산에서 진주로 출발하는 시간은
-        <br />
-        기사님께서 식 당일 별도로 안내드릴 예정입니다.
+        {`예식 후 부산에서 진주로 출발하는 시간은
+기사님께서 식 당일 별도로 안내드릴 예정입니다.`}
       </p>
     </section>
   );
