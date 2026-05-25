@@ -1,12 +1,12 @@
 import { Phone, MessageSquare } from "lucide-react";
 
-const DRIVER_NAME = "버스기사 손경호";
+const DRIVER_NAME = "손경호 버스기사님 🧑🏻‍✈️";
 const DRIVER_TEL = "010-5596-7015";
 const BUS_INFO = "영진고속관광 경남72 바 9774";
 
 const SCHEDULE = [
   { time: "9:00", place: "진주 신안동 공설운동장 1문" },
-  { time: "9:20", place: "초전 농산물 공판장" },
+  { time: "9:20", place: "진주 초전 농산물 공판장" },
 ];
 
 export function ShuttleBusSection() {
@@ -47,7 +47,7 @@ export function ShuttleBusSection() {
         <div className="flex items-center justify-between gap-3">
           <div>
             <p className="font-semibold text-foreground">{DRIVER_NAME}</p>
-            <p className="text-sm text-foreground/75">{DRIVER_TEL}</p>
+            <p className="text-foreground/75 text-lg">{DRIVER_TEL}</p>
           </div>
           <div className="flex items-center gap-2">
             <a
@@ -87,7 +87,7 @@ export function ShuttleBusSection() {
       </div>
 
       <p
-        className="text-xs text-foreground/60 leading-[1.8] text-center"
+        className="text-foreground/60 leading-[1.8] text-center font-sans text-base"
         style={{ fontFamily: "var(--font-serif)" }}
       >
         예식 후 부산에서 진주로 출발하는 시간은
