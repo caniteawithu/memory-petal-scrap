@@ -1,6 +1,8 @@
 import { useEffect, useMemo, useState } from "react";
+import { useServerFn } from "@tanstack/react-start";
 import guestTitle from "@/assets/guest.png";
 import { supabase } from "@/integrations/supabase/client";
+import { deleteGuestbookMessage } from "@/lib/guestbook.functions";
 
 type Message = {
   id: string;
@@ -28,11 +30,13 @@ export function GuestbookSection() {
   const [showAll, setShowAll] = useState(false);
   const [submitting, setSubmitting] = useState(false);
 
-  const isAdmin = useMemo(() => {
-    if (typeof window === "undefined") return false;
+  const adminToken = useMemo(() => {
+    if (typeof window === "undefined") return null;
     const params = new URLSearchParams(window.location.search);
-    return params.get("admin") === "1234";
+    return params.get("admin");
   }, []);
+  const isAdmin = !!adminToken;
+  const deleteMessageFn = useServerFn(deleteGuestbookMessage);
 
   useEffect(() => {
     let cancelled = false;
@@ -93,10 +97,16 @@ export function GuestbookSection() {
   };
 
   const handleDelete = async (id: string) => {
-    if (!isAdmin) return;
+    if (!isAdmin || !adminToken) return;
     if (!window.confirm("이 방명록을 삭제할까요?")) return;
-    setMessages((prev) => prev.filter((m) => m.id !== id));
-    await supabase.from("guestbook_messages").delete().eq("id", id);
+    const prev = messages;
+    setMessages((p) => p.filter((m) => m.id !== id));
+    try {
+      await deleteMessageFn({ data: { id, token: adminToken } });
+    } catch {
+      setMessages(prev);
+      window.alert("삭제 권한이 없습니다.");
+    }
   };
 
   const rotations = [-2, 1.5, -1, 2, -1.5, 1];
