@@ -1,0 +1,1 @@
+DROP POLICY IF EXISTS "Anyone can delete guestbook messages" ON public.guestbook_messages;
