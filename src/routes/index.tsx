@@ -39,6 +39,8 @@ function WeddingInvitation() {
         <StarDivider />
         <LocationSection />
         <StarDivider />
+        <ShuttleBusSection />
+        <StarDivider />
         <AccountSection />
         <StarDivider />
         <GuestbookSection />
