@@ -5,6 +5,7 @@ import { CalendarSection } from "@/components/wedding/CalendarSection";
 import { ContactSection } from "@/components/wedding/ContactSection";
 import { GallerySection } from "@/components/wedding/GallerySection";
 import { LocationSection } from "@/components/wedding/LocationSection";
+import { ShuttleBusSection } from "@/components/wedding/ShuttleBusSection";
 import { AccountSection } from "@/components/wedding/AccountSection";
 import { GuestbookSection } from "@/components/wedding/GuestbookSection";
 import { FooterSection } from "@/components/wedding/FooterSection";
