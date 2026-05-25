@@ -1,5 +1,6 @@
 import { createServerFn } from "@tanstack/react-start";
 import { z } from "zod";
+import { timingSafeEqual } from "node:crypto";
 import { supabaseAdmin } from "@/integrations/supabase/client.server";
 
 export const deleteGuestbookMessage = createServerFn({ method: "POST" })
@@ -13,7 +14,13 @@ export const deleteGuestbookMessage = createServerFn({ method: "POST" })
   )
   .handler(async ({ data }) => {
     const adminToken = process.env.GUESTBOOK_ADMIN_TOKEN;
-    if (!adminToken || data.token !== adminToken) {
+    if (!adminToken) throw new Error("Unauthorized");
+    const provided = Buffer.from(data.token);
+    const expected = Buffer.from(adminToken);
+    if (
+      provided.length !== expected.length ||
+      !timingSafeEqual(provided, expected)
+    ) {
       throw new Error("Unauthorized");
     }
     const { error } = await supabaseAdmin
