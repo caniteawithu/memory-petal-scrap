@@ -4,7 +4,7 @@ type Person = { role: string; name: string; phone: string };
 
 const groom: Person[] = [
   { role: "신랑", name: "구동환", phone: "010-6507-3885" },
-  { role: "아버지", name: "구자홍", phone: "010-3553-3857" },
+  { role: "아버지", name: "구자홍", phone: "010-3553-8357" },
   { role: "어머니", name: "김민손", phone: "010-3404-3881" },
 ];
 
